@@ -1,10 +1,7 @@
-from PyQt5 import QtWidgets, QtGui, QtCore
-from PyQt5.QtWidgets import QMessageBox
-import numpy as np
+from PyQt5 import QtWidgets, QtCore
 
-from Tracks import Track
-from MainWindow import Ui_MainWindow
-from MplWidget import MplWidget
+from Frontend.MainWindow import Ui_MainWindow
+from Frontend.MplWidget import MplWidget
 
 import sys
 
