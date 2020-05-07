@@ -5,11 +5,9 @@ Sintetizo un sonido.
 
 """
 
-import numpy as np
-
-from Additive_Synthesis.timbre import Timbre
 from Additive_Synthesis.waves import generate_wave
 from Additive_Synthesis.utils import calculate_overtones_share
+
 
 def synthesize(timbre, frequency, volume, duration, sample_rate):
     """
