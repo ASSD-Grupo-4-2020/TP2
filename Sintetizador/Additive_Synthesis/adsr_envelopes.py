@@ -8,8 +8,11 @@ Genero las envolventes ADSR para cada nota
 import numpy as np
 from math import ceil
 
-def absolute_adsr(duration, sample_rate, attack_time, decay_time, sustain_level, release_time):
+
+def absolute_adsr(duration, sample_rate, attack_time=0.3, decay_time=0.2, sustain_level=0.6, release_time=0.49):
     """
+    Creo envolvente con tiempos de ataque, decaimiento, y release fijos
+
     :param duration:
          duracion del sonido en segundos
     :param sample_rate:
@@ -32,8 +35,8 @@ def absolute_adsr(duration, sample_rate, attack_time, decay_time, sustain_level,
     max_tmpts_decay = int(round(decay_time * sample_rate))
     max_tmpts_release = int(round(release_time * sample_rate))
 
-    adr_duration_in_tmpts = (max_tmpts_attack + max_tmpts_decay + max_tmpts_release)
-    sustain_duration_in_tmpts = timepoints - adr_duration_in_tmpts
+    #adr_duration_in_tmpts = (max_tmpts_attack + max_tmpts_decay + max_tmpts_release)
+    #sustain_duration_in_tmpts = timepoints - adr_duration_in_tmpts
 
     if max_tmpts_attack > 0:
         step = 1 / max_tmpts_attack
