@@ -43,7 +43,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
         self.ui.pushButton.clicked.connect(self.add_track)
-
+        self.ui.pushButton_2.clicked.connect(self.remove_track)
 
 
         ###   Callbacks   ###
@@ -129,7 +129,12 @@ class MainWindow(QtWidgets.QMainWindow):
 
     #removes track from gui
     def remove_track(self):
-        pass
+        for widget in self.ui.scrollAreaWidgetContents.children():
+            if type(widget) == TrackUI:
+                print(type(widget))
+                self.ui.trackwindow_layout.removeWidget(widget)
+                widget.deleteLater()
+                widget.wiget_name = None
 
     #plays desired track
     def play_track(self):

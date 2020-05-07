@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>624</height>
+    <width>1095</width>
+    <height>683</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -23,10 +23,10 @@
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>320</x>
       <y>10</y>
-      <width>631</width>
-      <height>561</height>
+      <width>761</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -37,7 +37,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>614</width>
+       <width>744</width>
        <height>3464</height>
       </rect>
      </property>
@@ -63,7 +63,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel1" native="true">
            <property name="minimumSize">
             <size>
@@ -75,6 +75,32 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="1" column="0">
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline1" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -97,7 +123,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel2" native="true">
            <property name="minimumSize">
             <size>
@@ -109,6 +135,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline2" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -131,7 +167,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel3" native="true">
            <property name="minimumSize">
             <size>
@@ -143,6 +179,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline3" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -181,6 +227,16 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline4" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -215,6 +271,16 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline5" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -233,7 +299,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel6" native="true">
            <property name="minimumSize">
             <size>
@@ -245,6 +311,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline6" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -267,7 +343,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel7" native="true">
            <property name="minimumSize">
             <size>
@@ -279,6 +355,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline7" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -301,7 +387,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel8" native="true">
            <property name="minimumSize">
             <size>
@@ -313,6 +399,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline8" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -335,8 +431,8 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <item alignment="Qt::AlignLeft">
-          <widget class="QWidget" name="widget_9" native="true">
+         <item>
+          <widget class="QWidget" name="trackpanel9" native="true">
            <property name="minimumSize">
             <size>
              <width>180</width>
@@ -347,6 +443,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline9" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -369,7 +475,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_10">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel10" native="true">
            <property name="minimumSize">
             <size>
@@ -381,6 +487,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline10" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -403,7 +519,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_11">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel11" native="true">
            <property name="minimumSize">
             <size>
@@ -415,6 +531,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline11" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -437,7 +563,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_12">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel12" native="true">
            <property name="minimumSize">
             <size>
@@ -449,6 +575,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline12" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -471,7 +607,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_13">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel13" native="true">
            <property name="minimumSize">
             <size>
@@ -483,6 +619,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline13" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -505,7 +651,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_14">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel14" native="true">
            <property name="minimumSize">
             <size>
@@ -517,6 +663,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline14" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -539,7 +695,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_15">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel15" native="true">
            <property name="minimumSize">
             <size>
@@ -551,6 +707,16 @@
             <size>
              <width>16777215</width>
              <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline15" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
             </size>
            </property>
           </widget>
@@ -573,7 +739,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_16">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel16" native="true">
            <property name="minimumSize">
             <size>
@@ -589,6 +755,16 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="MplWidget" name="tracktimeline16" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -600,7 +776,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>311</width>
+      <width>291</width>
       <height>321</height>
      </rect>
     </property>
@@ -624,32 +800,27 @@
      <string>Agregar track</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>460</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Eliminar track</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>1095</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MplWidget</class>
+   <extends>QWidget</extends>
+   <header>MplWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
