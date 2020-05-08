@@ -29,10 +29,11 @@ class Overtone:
 class Timbre:
     def __init__(self, fundamental_envelope_fn, overtones):
         """
-        Timbre de un sonido en aprticular
+        Timbre de un sonido en particular
         :param fundamental_envelope_fn:
             funcion que mapea duracion en segundos y sample rate a la envolvente de la fundamental
         :param overtones:
+            lista con todos los sobretonos
         """
 
         self.fundamental_envelope_fn = fundamental_envelope_fn

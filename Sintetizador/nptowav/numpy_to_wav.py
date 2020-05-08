@@ -3,7 +3,6 @@ Cconvierte un array con datos de numpy en un archivo WAV.
 
 """
 
-import numpy as np
 import scipy.io.wavfile
 
 

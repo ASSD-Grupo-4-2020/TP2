@@ -18,7 +18,7 @@ def synthesize(timbre, frequency, volume, duration, sample_rate):
     :param frequency:
         frecuencia de fundamental en Hz
     :param volume:
-        volumen del frgamento sonoro
+        volumen del fragmento sonoro
     :param duration:
         duracion del fragmento generado en segundos
     :param sample_rate:

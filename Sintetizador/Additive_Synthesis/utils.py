@@ -5,8 +5,6 @@ Funciones y calculos auxiliares
 
 """
 
-from Additive_Synthesis.timbre import Timbre
-
 
 def calculate_overtones_share(timbre):
     """

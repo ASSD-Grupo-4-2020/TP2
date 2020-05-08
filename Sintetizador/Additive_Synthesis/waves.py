@@ -7,6 +7,7 @@ Genero ondas senoidales basicas
 
 import numpy as np
 
+
 def generate_wave(frequency, amplitudes, sample_rate):
     """
     :param frequency:
