@@ -9,7 +9,7 @@ con sus bits de posiciones invertidas
 
 #include "FFT.h"
 
-void fft(vector<complex<float>>& in, vector<complex<float>>& out,size_t n=0) {
+void fft(vector<complex<float>>& in, vector<complex<float>>& out,size_t n) {
 	//Variables Temporales
 	complex<float> A, B,TEMP;
 	size_t REVERSBIT;

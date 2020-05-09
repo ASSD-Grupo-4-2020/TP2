@@ -1,6 +1,6 @@
 #pragma once
 /*
-Heder file d ela fft donde se van a incluir cualquier tabla necesaria así como la definiciones de las funciones necesarias 
+Heder file d ela fft donde se van a incluir cualquier tabla necesaria asï¿½ como la definiciones de las funciones necesarias 
 para la realizacion del algoritmo
 */
 
@@ -12,7 +12,7 @@ para la realizacion del algoritmo
 using namespace std;
 
 //Funciones
-void fft(vector<complex<float>>& in, vector<complex<float>>& out, size_t N);
+void fft(vector<complex<float>>& in, vector<complex<float>>& out, size_t n=0);
 size_t bit_rev(size_t num, size_t nbits);
 
 //Tablas
