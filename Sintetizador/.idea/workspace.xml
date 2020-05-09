@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b387a286-79e5-4cbc-8253-e73509585292" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Instruments/Copia de Filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Instruments/instruments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Instruments/piano-a_A_major.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Instruments/violin-C4.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Instruments/violin_a4.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miditodata/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Sintetizador.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sintetizador.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/adsr_envelopes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/adsr_envelopes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/file.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/timbre.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/timbre.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/waves.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/waves.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1bV3wR12CB30mIi63B3No02HWza" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
+      <recent name="$PROJECT_DIR$/Frontend" />
+      <recent name="$PROJECT_DIR$/prueba midi" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.instruments">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="adsr_envelopes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Additive Synthesis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive Synthesis/adsr_envelopes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="instruments" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive_Synthesis/Instruments/instruments.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="synthesis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Additive_Synthesis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive_Synthesis/synthesis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Additive_Synthesis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive_Synthesis/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Additive_Synthesis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive_Synthesis/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.instruments" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.synthesis" />
+        <item itemvalue="Python.adsr_envelopes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b387a286-79e5-4cbc-8253-e73509585292" name="Default Changelist" comment="" />
+      <created>1588703672152</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588703672152</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="916" y="384" width="292" height="247" key="#Notifications" timestamp="1589039848927">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="916" y="384" width="292" height="247" key="#Notifications/0.23.1920.977@0.23.1920.977" timestamp="1589039848927" />
+    <state x="544" y="312" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588960250953">
+      <screen x="0" y="23" width="1920" height="978" />
+    </state>
+    <state x="544" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.978@0.23.1920.978" timestamp="1588960250953" />
+    <state x="1183" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588896110756">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1183" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588896110756" />
+    <state width="1522" height="223" key="GridCell.Tab.0.bottom" timestamp="1589054155695">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="916" height="380" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588958632325" />
+    <state width="1522" height="223" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1589054155695" />
+    <state width="1522" height="420" key="GridCell.Tab.0.bottom/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
+    <state width="1522" height="173" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
+    <state width="1522" height="223" key="GridCell.Tab.0.center" timestamp="1589054155695">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="916" height="380" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588958632324" />
+    <state width="1522" height="223" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1589054155695" />
+    <state width="1522" height="420" key="GridCell.Tab.0.center/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
+    <state width="1522" height="173" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
+    <state width="1522" height="223" key="GridCell.Tab.0.left" timestamp="1589054155694">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="916" height="380" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588958632324" />
+    <state width="1522" height="223" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1589054155694" />
+    <state width="1522" height="420" key="GridCell.Tab.0.left/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
+    <state width="1522" height="173" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1589045635689" />
+    <state width="1522" height="223" key="GridCell.Tab.0.right" timestamp="1589054155695">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="916" height="380" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588958632325" />
+    <state width="1522" height="223" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1589054155695" />
+    <state width="1522" height="420" key="GridCell.Tab.0.right/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
+    <state width="1522" height="173" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
+    <state width="1522" height="255" key="GridCell.Tab.1.bottom" timestamp="1589052229492">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1522" height="255" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1589052229492" />
+    <state width="1522" height="255" key="GridCell.Tab.1.center" timestamp="1589052229492">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1522" height="255" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1589052229492" />
+    <state width="1522" height="255" key="GridCell.Tab.1.left" timestamp="1589052229491">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1522" height="255" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1589052229491" />
+    <state width="1522" height="255" key="GridCell.Tab.1.right" timestamp="1589052229492">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1522" height="255" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1589052229492" />
+    <state x="426" y="265" key="SettingsEditor" timestamp="1588956130963">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="426" y="265" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1588956130963" />
+    <state x="426" y="263" key="SettingsEditor/0.23.1920.977@0.23.1920.977" timestamp="1588804609126" />
+    <state x="1145" y="175" width="600" height="729" key="find.popup" timestamp="1588896042670">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1145" y="175" width="600" height="729" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588896042670" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
