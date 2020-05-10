@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../ASSD-2020-G4/TP1 - Muestreo/Python/.idea/Python.iml" filepath="$PROJECT_DIR$/../../ASSD-2020-G4/TP1 - Muestreo/Python/.idea/Python.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Sintetizador/.idea/Sintetizador.iml" filepath="$PROJECT_DIR$/../Sintetizador/.idea/Sintetizador.iml" />
-    </modules>
-  </component>
-</project>

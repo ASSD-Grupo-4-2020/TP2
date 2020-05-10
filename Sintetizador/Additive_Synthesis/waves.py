@@ -26,4 +26,6 @@ def generate_wave(frequency, amplitudes, sample_rate):
 
     plain_wave = np.sin((2 * np.pi * frequency)/sample_rate * x)
 
-    return plain_wave
+    wave = amplitudes * plain_wave
+
+    return wave

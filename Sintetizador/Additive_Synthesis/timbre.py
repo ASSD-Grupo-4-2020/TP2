@@ -18,7 +18,7 @@ class Overtone:
             en otras palabras, el volumen máximo de éste sobretono dividido entre la suma de los volumenes
             maximos de todos los sobretonos y la fundamental
         :param envelope_fn:
-            funcion que mapea la duracion ens egundos y el sample rate a la envolvente
+            funcion que mapea la duracion en segundos y el sample rate a la envolvente
         """
 
         self.frequency_ratio = frequency_ratio
