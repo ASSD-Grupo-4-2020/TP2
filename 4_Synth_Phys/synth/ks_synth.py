@@ -5,19 +5,19 @@ from scipy import signal
 import matplotlib as plt
 
 def wave(shape, amp, phase, freq, t):
-    # Wave Function
-    waveform = np.zeros_like(t)
+    # Returns the correspoding wavetable
+    wavetable = np.zeros_like(t)
     
     if shape == "sine":
-        waveform = amp * np.sin(2 * np.pi * freq * t + phase)
+        wavetable = amp * np.sin(2 * np.pi * freq * t + phase)
     elif shape == "sine sine":
-        waveform = amp * np.sin(np.sin(2 * np.pi * freq * t + phase))
+        wavetable = amp * np.sin(np.sin(2 * np.pi * freq * t + phase))
     elif shape == "sqaure":
-        waveform = amp * signal.square(2 * np.pi * freq * t + phase)
+        wavetable = amp * signal.square(2 * np.pi * freq * t + phase)
     elif shape == "down_ramp":
-        waveform = amp * signal.sawtooth(2 * np.pi * freq * t + phase, 0)
+        wavetable = amp * signal.sawtooth(2 * np.pi * freq * t + phase, 0)
     
-    return waveform
+    return wavetable
 
 def make_wavetable(n_samples, amps, phases, freqs):
     #Generate Wavetable: el track contiene la información
