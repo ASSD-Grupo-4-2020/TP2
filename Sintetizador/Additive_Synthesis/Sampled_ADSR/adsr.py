@@ -23,33 +23,36 @@ class Instrument:
             self.harmonics_n = 13
             self.fundamental_frequency = 261
             self.cutoff = 80
-            self.fudnamental_amp = 1.662e7
+            self.fundamental_amp = 1.662e7
             self.partial_amps = [5.45651e6, 3.02029e6, 2.30182e6, 2.29503e6, 1.6187e6, 612246, 1.14481e6, 1.27999e6,
                               141558, 104204, 331075, 789459, 291382]
 
         elif self.instrument == 'flute':
             self.sample_rate = Instrument.flute_sample_rate
             self.data = Instrument.flute_data
-            self.harmonics_n = 6
+            self.harmonics_n = 5
             self.fundamental_frequency = 392
             self.cutoff = 40
-            self.partial_amps = None
+            self.fundamental_amp = 2.74479e7
+            self.partial_amps = [9.26164e6, 2.37813e6, 2.09471e6, 962194, 512023]
 
         elif self.instrument == 'piano':
             self.sample_rate = Instrument.piano_sample_rate
             self.data = Instrument.piano_data
-            self.harmonics_n = 8
+            self.harmonics_n = 10
             self.fundamental_frequency = 261
             self.cutoff = 40
-            self.partial_amps = None
+            self.fundamental_amp = 5.3073e6
+            self.partial_amps = [3.74364e6, 470247, 594022, 53413, 574684, 156378, 223971, 194611, 92896, 90520, 70542]
 
         elif self.instrument == 'trumpet':
             self.sample_rate = Instrument.trumpet_sample_rate
             self.data = Instrument.trumpet_data
-            self.harmonics_n = 6
-            self.fundamental_frequency = 392
-            self.cutoff = 40
-            self.partial_amps = None
+            self.harmonics_n = 17
+            self.fundamental_frequency = 261
+            self.cutoff = 30
+            self.fundamental_amp = 2.165e6
+            self.partial_amps = [3.06691e6, 5.30304e6, 6.9947e6, 2.63067e6, 5.72642e6, 2.88338e6, 1.78508e5, 1.41131e6, 1.18833e6, 1.56109e6, 869455, 60259, 279227, 159287, 154722, 109846, 108000]
 
         else:
             pass
@@ -104,7 +107,7 @@ class Instrument:
         ##hasta aca standard para cualquier instrumento
 
 
-        #caso violin (funca buenardo)
+        #caso violin, piano y flauta (funca buenardo con un solo suavizado) trompeta no tanto
         copy = normalized.copy()
 
         copy[copy < 0] = 0
@@ -113,6 +116,9 @@ class Instrument:
 
         max_smooth = np.amax(suave)
         suave = suave / max_smooth
+
+        #for k in range(9):
+        #    suave = smooth(suave)
 
         new_time = np.arange(0, len(suave) / self.sample_rate, 1 / self.sample_rate)
 
@@ -124,15 +130,22 @@ class Instrument:
 
         out = extend(fundamental, time, duration, self.sample_rate, self.instrument)
 
-        path = '/Users/agustin/Desktop/omegalul4.wav'
+        #path = '/Users/agustin/Desktop/trompeta_suave1.wav'
 
-        write_timeline_to_wav(path, out, self.sample_rate)
+        #write_timeline_to_wav(path, fundamental, self.sample_rate)
 
-        return out
+        return fundamental
 
     def calculate_partial_shares(self):
         for k in range(len(self.partial_amps)):
-            self.partial_amps[k] = self.partial_amps[k] / self.fudnamental_amp
+            self.partial_amps[k] = self.partial_amps[k] / self.fundamental_amp
 
-instrumneto = Instrument('piano')
-instrumneto.get_base_adsr(261, 2)
+    def fft_data(self):
+        plt.plot(fftfreq(self.data.shape[0], 1 / self.sample_rate), abs(fft(self.data)))
+        plt.show()
+
+
+#instrumneto = Instrument('flute')
+#instrumneto.fft_data()
+
+#instrumneto.get_base_adsr(261, 2)

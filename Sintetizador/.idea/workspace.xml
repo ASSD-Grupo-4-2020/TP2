@@ -20,22 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b387a286-79e5-4cbc-8253-e73509585292" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/flute-C4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/flute-G4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/piano-C4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/prueba.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/trumpet-C4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/adsr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Instruments/Copia de Filters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Instruments/instruments.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/instruments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Instruments/piano-a_A_major.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Instruments/violin-C4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/violin-C4.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Instruments/violin_a4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/adsr_envelopes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/adsr_envelopes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/waves.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/waves.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/adsr.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/adsr.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +64,7 @@
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.instruments (1)">
+  <component name="RunManager" selected="Python.adsr">
     <configuration name="adsr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Sintetizador" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -207,9 +193,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.adsr" />
         <item itemvalue="Python.instruments (1)" />
         <item itemvalue="Python.prueba" />
-        <item itemvalue="Python.adsr" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.instruments" />
       </list>
@@ -257,35 +243,35 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1183" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588896110756" />
-    <state width="1522" height="236" key="GridCell.Tab.0.bottom" timestamp="1589226831258">
+    <state width="1522" height="236" key="GridCell.Tab.0.bottom" timestamp="1589231175176">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784675" />
-    <state width="1522" height="236" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589226831258" />
+    <state width="1522" height="236" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589231175176" />
     <state width="1522" height="223" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.bottom/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
     <state width="1522" height="173" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
-    <state width="1522" height="236" key="GridCell.Tab.0.center" timestamp="1589226831257">
+    <state width="1522" height="236" key="GridCell.Tab.0.center" timestamp="1589231175175">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784673" />
-    <state width="1522" height="236" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589226831257" />
+    <state width="1522" height="236" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589231175175" />
     <state width="1522" height="223" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.center/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
     <state width="1522" height="173" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
-    <state width="1522" height="236" key="GridCell.Tab.0.left" timestamp="1589226831257">
+    <state width="1522" height="236" key="GridCell.Tab.0.left" timestamp="1589231175175">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784673" />
-    <state width="1522" height="236" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589226831257" />
+    <state width="1522" height="236" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589231175175" />
     <state width="1522" height="223" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.left/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
     <state width="1522" height="173" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1589045635689" />
-    <state width="1522" height="236" key="GridCell.Tab.0.right" timestamp="1589226831258">
+    <state width="1522" height="236" key="GridCell.Tab.0.right" timestamp="1589231175175">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784674" />
-    <state width="1522" height="236" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589226831258" />
+    <state width="1522" height="236" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589231175175" />
     <state width="1522" height="223" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.right/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
     <state width="1522" height="173" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
