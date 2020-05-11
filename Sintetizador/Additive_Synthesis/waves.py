@@ -6,6 +6,8 @@ Genero ondas senoidales basicas
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fftpack import fft, fftfreq, ifft
 
 
 def generate_wave(frequency, amplitudes, sample_rate):
@@ -24,7 +26,7 @@ def generate_wave(frequency, amplitudes, sample_rate):
     timepoints = len(amplitudes)
     x = np.arange(timepoints)
 
-    plain_wave = np.sin((2 * np.pi * frequency)/sample_rate * x)
+    plain_wave = np.sin((2 * np.pi * frequency) * (x / sample_rate))
 
     wave = amplitudes * plain_wave
 
