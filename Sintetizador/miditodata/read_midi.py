@@ -137,3 +137,28 @@ stream = p.open(format=pyaudio.paFloat32,
 
 stream.write(y.astype(np.float32).tostring())
 stream.close()
+
+###### Pruebas de Victor ########
+
+fs = 44100
+freqs = [98, 123, 147, 196, 294, 392, 392, 294, 196, 147, 123, 98]
+
+unit_delay = fs//3
+
+# Son los tiempos iniciales de cada nota
+delays = [unit_delay * _ for _ in range(len(freqs))]
+
+notes=[]
+for freq, delay in zip(freqs, delays):
+    new_note = Mynote(fs, freq, delay, delay+2*fs, 1) # 2*fs hace que cada una dure 2 seg
+    notes.append(new_note)
+
+for note in notes:
+    # Sintetizo nota
+    guitarnote = GuitarString(note.pitch, note.fs, note.A, note.get_len(), '2-level')
+    note.add_sound(guitarnote.get_samples()) # Le asocio a cada objeto nota su respectivo sonido
+
+# Combino los sonidos   
+# Básicamente, recorre cada objeto MyNota, se fija si a un tiempo 't' le corresponde tocar (devuelve 0 o x(t)) y suma todo lo que encuentre para el momento 't'. Así continúa con toda la secuencia.
+# Este nuevo arreglo deberías poder insertarlo al pyaudio. Es sólo el y(n) final con todas las notas juntas.
+guitar_sound = [sum(note.get_sample(t) for note in notes) for t in range(fs*6)]
