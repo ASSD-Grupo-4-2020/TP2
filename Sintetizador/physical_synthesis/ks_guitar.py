@@ -16,6 +16,7 @@ def karplus_strong(wavetable, n_samples, stretch_factor):
         curr_sample = (curr_sample+1) % wavetable.size  # Avanzo el índice circularmente
     return np.array(samples)
 
+
 class GuitarString:
     def __init__(self, pitch, fs, A, S, T, noise_type):
         """Initialize Guitar String"""

@@ -21,16 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b387a286-79e5-4cbc-8253-e73509585292" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/flute-C4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Wavs/flute-C4.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/flute-G4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Wavs/flute-G4.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/piano-C4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Wavs/piano-C4.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/prueba.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/trumpet-C4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Wavs/trumpet-C4.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/violin-C4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Wavs/violin-C4.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/adsr.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Instruments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/instrument_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/synthesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/synthesis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/utils2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miditodata/read_midi.py" beforeDir="false" afterPath="$PROJECT_DIR$/miditodata/read_midi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/physical_synthesis/ks_guitar.py" beforeDir="false" afterPath="$PROJECT_DIR$/physical_synthesis/ks_guitar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

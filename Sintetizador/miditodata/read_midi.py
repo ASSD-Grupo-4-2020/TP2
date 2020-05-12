@@ -4,12 +4,17 @@ Leo archivos midi y los interpreto
 """
 
 import mido
-from Additive_Synthesis.Instruments import Instrument
+import numpy as np
+
+from Additive_Synthesis.instrument_utils import find_nearest
+from physical_synthesis.ks_guitar import GuitarString
+
 
 def midi_to_freq(midi_note):
     midiA4 = 69
     f = 2**((midi_note-midiA4)/12) * 440
     return round(f,2)
+
 
 def find_note_off(note, track):
     time = 0
@@ -23,8 +28,7 @@ def find_note_off(note, track):
     return time
 
 
-
-class my_note:
+class Mynote:
     def __init__(self, fs, pitch, t_i, t_f, A):
         """Initialize Note Object"""
         self.fs = fs
@@ -32,6 +36,7 @@ class my_note:
         self.t_i = t_i
         self.t_f = t_f
         self.A = A
+        self.sound = None
 
     def get_len(self):
         return self.t_f - self.t_i
@@ -39,15 +44,19 @@ class my_note:
     def add_sound(self, sound): #Sound should be the array of sample values in time
         """Attaches the sound for this note as an array of samples"""
         self.sound = sound
-    def get_sample(self, time): 
+
+    def get_sample(self, time):
         """Returns the sample at a given time. If it isn't the time for the note to play it will return an empty value"""
+
         if time < self.t_i or time > self.t_f:
             sample = 0
         else:
             sample = self.sound[time-self.t_i]
+
         return sample
 
-class my_track:
+
+class MyTrack:
     def __init__(self):
         self.notes = []
 
@@ -85,13 +94,13 @@ note_list = track_parse(mid.tracks[1])
 largo = mid.length
 print(largo)
 tempo_usable = 461538
+sample_rate = 11025
 
 time = np.arange(0, largo, 1 / 11025)
 y = np.zeros(len(time))
 
-sintesis = Add_synth('violin')
 
-"""
+
 for note in note_list:
     length = note.get_len_seconds(mid.ticks_per_beat, tempo_usable)
     print(length)
@@ -108,4 +117,3 @@ for note in note_list:
 
     for idx in range(index, len(nota)):
         y[idx] += nota[idx]
-"""
