@@ -192,3 +192,17 @@ for note in notes:
 # Básicamente, recorre cada objeto MyNota, se fija si a un tiempo 't' le corresponde tocar (devuelve 0 o x(t)) y suma todo lo que encuentre para el momento 't'. Así continúa con toda la secuencia.
 # Este nuevo arreglo deberías poder insertarlo al pyaudio. Es sólo el y(n) final con todas las notas juntas.
 guitar_sound = [sum(note.get_sample(t) for note in notes) for t in range(fs*6)]
+
+p = pyaudio.PyAudio()
+
+stream = p.open(format=pyaudio.paFloat32,
+                channels=1,
+                rate=fs,
+                frames_per_buffer=1024,
+                output=True,
+                output_device_index=1
+                )
+
+
+stream.write(guitar_sound.astype(np.float32).tostring())
+stream.close()

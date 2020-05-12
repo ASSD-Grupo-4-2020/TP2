@@ -7,19 +7,20 @@ from Additive_Synthesis.instrument_utils import find_nearest, shift2, extend, sm
 from Additive_Synthesis.waves import generate_wave
 from nptowav.numpy_to_wav import write_timeline_to_wav
 
+violin_sample_rate, violin_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/violin-C4.wav')
+flute_sample_rate, flute_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/flute-G4.wav')
+trumpet_sample_rate, trumpet_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/trumpet-C4')
+piano_sample_rate, piano_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/piano-C4.wav')
+
+
 
 class Instrument:
-    violin_sample_rate, violin_data = wavfile.read('Wavs/violin-C4.wav')
-    flute_sample_rate, flute_data = wavfile.read('Wavs/flute-G4.wav')
-    trumpet_sample_rate, trumpet_data = wavfile.read('Wavs/trumpet-C4.wav')
-    piano_sample_rate, piano_data = wavfile.read('Wavs/piano-C4.wav')
-
     def __init__(self, instrumnet):
         self.instrument = instrumnet
 
         if self.instrument == 'violin':
-            self.sample_rate = Instrument.violin_sample_rate
-            self.data = Instrument.violin_data
+            self.sample_rate = violin_sample_rate
+            self.data = violin_data
             self.harmonics_n = 13
             self.fundamental_frequency = 261
             self.cutoff = 80
@@ -28,8 +29,8 @@ class Instrument:
                               141558, 104204, 331075, 789459, 291382]
 
         elif self.instrument == 'flute':
-            self.sample_rate = Instrument.flute_sample_rate
-            self.data = Instrument.flute_data
+            self.sample_rate = flute_sample_rate
+            self.data = flute_data
             self.harmonics_n = 5
             self.fundamental_frequency = 392
             self.cutoff = 40
@@ -37,8 +38,8 @@ class Instrument:
             self.partial_amps = [9.26164e6, 2.37813e6, 2.09471e6, 962194, 512023]
 
         elif self.instrument == 'piano':
-            self.sample_rate = Instrument.piano_sample_rate
-            self.data = Instrument.piano_data
+            self.sample_rate = piano_sample_rate
+            self.data = piano_data
             self.harmonics_n = 10
             self.fundamental_frequency = 261
             self.cutoff = 40
@@ -46,8 +47,8 @@ class Instrument:
             self.partial_amps = [3.74364e6, 470247, 594022, 53413, 574684, 156378, 223971, 194611, 92896, 90520, 70542]
 
         elif self.instrument == 'trumpet':
-            self.sample_rate = Instrument.trumpet_sample_rate
-            self.data = Instrument.trumpet_data
+            self.sample_rate = trumpet_sample_rate
+            self.data = trumpet_data
             self.harmonics_n = 17
             self.fundamental_frequency = 261
             self.cutoff = 30

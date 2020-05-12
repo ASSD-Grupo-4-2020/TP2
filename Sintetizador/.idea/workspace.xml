@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b387a286-79e5-4cbc-8253-e73509585292" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/miditodata/read_midi.py" beforeDir="false" afterPath="$PROJECT_DIR$/miditodata/read_midi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/physical_synthesis/ks_guitar.py" beforeDir="false" afterPath="$PROJECT_DIR$/physical_synthesis/ks_guitar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,15 +53,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Additive_Synthesis" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
       <recent name="$PROJECT_DIR$/Frontend" />
       <recent name="$PROJECT_DIR$/prueba midi" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
     </key>
   </component>
   <component name="RunManager" selected="Python.read_midi">
