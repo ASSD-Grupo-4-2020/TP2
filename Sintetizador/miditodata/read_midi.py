@@ -35,6 +35,17 @@ class my_note:
     def get_len(self):
         return self.t_f - self.t_i
 
+    def add_sound(self, sound): #Sound should be the array of sample values in time
+        """Attaches the sound for this note as an array of samples"""
+        self.sound = sound
+    def get_sample(self, time): 
+        """Returns the sample at a given time. If it isn't the time for the note to play it will return an empty value"""
+        if time < self.t_i or time > self.t_f:
+            sample = 0
+        else:
+            sample = self.sound[time-self.t_i]
+        return sample
+
 class my_track:
     def __init__(self):
         self.notes = []
