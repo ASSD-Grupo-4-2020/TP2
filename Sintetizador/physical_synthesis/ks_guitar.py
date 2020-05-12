@@ -28,12 +28,13 @@ class GuitarString:
         self.noise_type = noise_type            # Tipo de Ruido Inicial
         self.init_wavetable()
         self.init_samples()
+        self.L = None
         
     def init_wavetable(self):
         """Generate new Wavetable for String"""
         self.L = int(np.floor(self.fs / int(self.pitch)-1/2/self.S))
         if self.noise_type == "normal":
-            self.wavetable = (self.A * np.random.normal(0,1,self.L)).astype(np.float)
+            self.wavetable = (self.A * np.random.normal(0, 1, self.L)).astype(np.float)
         if self.noise_type == "uniform":
             self.wavetable = (self.A * np.random.uniform(-1, 1, self.L)).astype(np.float)
         if self.noise_type == "2-level":

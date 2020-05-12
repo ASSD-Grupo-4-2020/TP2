@@ -20,11 +20,11 @@ def find_note_off(note, track):
     time = 0
     for msg in track:
         if msg.is_meta == 0:
-            print(msg)
+            #print(msg)
             time += msg.time
             if msg.type == 'note_off' and msg.note == note:
                 break
-            print(time)
+            #print(time)
     return time
 
 
@@ -78,22 +78,19 @@ def track_parse(track):
     for msg in track:
         if msg.is_meta == 0:
             if msg.type == 'note_on':
-                print('\n' + str(msg))
+                #print('\n' + str(msg))
                 t_i += msg.time
                 A = msg.velocity
                 t_f = t_i + find_note_off(msg.note, track[msg_num:len(track)+1])
                 pitch = midi_to_freq(msg.note)
                 new_note = Mynote(fs, pitch, t_i, t_f, A)
                 notes.append(new_note)
-                print('Pitch: {} \tt_i: {}   \tt_f: {}'.format(pitch, t_i, t_f))
+                #print('Pitch: {} \tt_i: {}   \tt_f: {}'.format(pitch, t_i, t_f))
                 msg_num += 1
     return notes
 
 
 mid = mido.MidiFile('tester.mid', clip=True)
-
-for msg in mid.tracks[0]:
-    print(msg)
 
 note_list = track_parse(mid.tracks[1])
 
@@ -118,9 +115,7 @@ for note in note_list:
     print(index)
     #sintetizo nota
 
-    guitarnote = GuitarString(pitch, 1 / sample_rate, 1, length * sample_rate, 'normal')
-    guitarnote.init_wavetable()
-    guitarnote.init_samples()
+    guitarnote = GuitarString(pitch, 1 / sample_rate, 1, length * sample_rate, '2-level')
     sample = guitarnote.get_samples()
     #Ahora debo sumar en el arreglo y, desde index hasta el final de mi nota
 
