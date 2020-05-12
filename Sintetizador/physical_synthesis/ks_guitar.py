@@ -18,11 +18,11 @@ def karplus_strong(wavetable, n_samples, stretch_factor):
 
 
 class GuitarString:
-    def __init__(self, pitch, fs, A, S, T, noise_type):
+    def __init__(self, pitch, fs, A, T, noise_type, S=1):
         """Initialize Guitar String"""
         self.pitch = pitch                      # Frecuencia de la nota
         self.fs = fs                            # Frecuencia de Sampleo
-        self.S = 1                              # Stretch Factor
+        self.S = S                              # Stretch Factor
         self.A = A                              # Amplitud
         self.T = T                              # Duración de la nota (samples)
         self.noise_type = noise_type            # Tipo de Ruido Inicial
