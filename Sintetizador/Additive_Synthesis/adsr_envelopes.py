@@ -9,7 +9,7 @@ import numpy as np
 from math import ceil, floor
 
 
-def relative_adsr(duration, sample_rate, attack_share=0.15, decay_share=0, sustain_level=0.6, release_share=0.2):
+def relative_adsr(duration, sample_rate, attack_share=0.228, decay_share=0, sustain_level=0.6, release_share=0.114):
     """
     Crea envolvente con tiempos de ataque, decaimiento y release proporcionales a la duracion
 
