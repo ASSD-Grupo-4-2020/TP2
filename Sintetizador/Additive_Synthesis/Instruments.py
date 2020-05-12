@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.fftpack import fft, fftfreq, ifft
 from scipy.io import wavfile
 
-from Additive_Synthesis.Sampled_ADSR.utils import find_nearest, shift2, extend, smooth
+from Additive_Synthesis.instrument_utils import find_nearest, shift2, extend, smooth
 from Additive_Synthesis.waves import generate_wave
 from nptowav.numpy_to_wav import write_timeline_to_wav
 
@@ -57,7 +57,16 @@ class Instrument:
         else:
             pass
 
-    def get_base_adsr(self, frequency, duration):
+    def get_sound(self, frequency, duration):
+        """
+        Genera el sonido en base a la fercuencia de la ntoa y la duracion deseada
+        :param frequency:
+            frecuencia de la nota
+        :param duration:
+            duracion de la nota
+        :return:
+            sonido como arreglo de numpy
+        """
 
         samples = self.data.shape[0]
 
@@ -117,7 +126,7 @@ class Instrument:
         max_smooth = np.amax(suave)
         suave = suave / max_smooth
 
-        #for k in range(9):
+        #for k in range(1):
         #    suave = smooth(suave)
 
         new_time = np.arange(0, len(suave) / self.sample_rate, 1 / self.sample_rate)
@@ -130,7 +139,7 @@ class Instrument:
 
         out = extend(fundamental, time, duration, self.sample_rate, self.instrument)
 
-        #path = '/Users/agustin/Desktop/trompeta_suave1.wav'
+        #path = '/Users/agustin/Desktop/flauta.wav'
 
         #write_timeline_to_wav(path, fundamental, self.sample_rate)
 
@@ -145,7 +154,43 @@ class Instrument:
         plt.show()
 
 
-#instrumneto = Instrument('flute')
+instrumneto = Instrument('flute')
 #instrumneto.fft_data()
 
-#instrumneto.get_base_adsr(261, 2)
+c4 = instrumneto.get_sound(261, 1)
+e4 = instrumneto.get_sound(329, 1)
+g4 = instrumneto.get_sound(392, 1)
+
+#path = '/Users/agustin/Desktop/c4.wav'
+
+#write_timeline_to_wav(path, c4, instrumneto.sample_rate)
+
+#path = '/Users/agustin/Desktop/e4.wav'
+
+#write_timeline_to_wav(path, e4, instrumneto.sample_rate)
+
+#path = '/Users/agustin/Desktop/g4.wav'
+
+#write_timeline_to_wav(path, g4, instrumneto.sample_rate)
+
+acorde = c4 + e4 + g4
+
+#path = '/Users/agustin/Desktop/acorde.wav'
+
+#write_timeline_to_wav(path, acorde, instrumneto.sample_rate)
+
+
+import pyaudio
+p = pyaudio.PyAudio()
+
+stream = p.open(format=pyaudio.paFloat32,
+                channels=1,
+                rate=instrumneto.sample_rate,
+                frames_per_buffer=1024,
+                output=True,
+                output_device_index=1
+                )
+
+
+stream.write(acorde.astype(np.float32).tostring())
+stream.close()

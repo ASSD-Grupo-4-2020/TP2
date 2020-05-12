@@ -6,7 +6,7 @@ Sintetizo un sonido.
 """
 
 from Additive_Synthesis.waves import generate_wave
-from Additive_Synthesis.utils import calculate_overtones_share
+from Additive_Synthesis.utils2 import calculate_overtones_share
 
 
 def synthesize(timbre, frequency, volume, duration, sample_rate):
