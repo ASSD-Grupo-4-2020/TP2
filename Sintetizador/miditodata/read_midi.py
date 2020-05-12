@@ -19,15 +19,13 @@ def midi_to_freq(midi_note):
 
 
 def find_note_off(note, track):
-    time = 0
+    current_time_in_ticks = 0
     for msg in track:
         if msg.is_meta == 0:
-            #print(msg)
-            time += msg.time
+            current_time_in_ticks += msg.time
             if msg.type == 'note_off' and msg.note == note:
                 break
-            #print(time)
-    return time
+    return current_time_in_ticks
 
 
 class Mynote:
@@ -93,22 +91,21 @@ def convert(real_note):
         return  real_note
 
 def track_parse(track):
-    fs = 44100
+    fs = 11025
     notes = []
-    t_i = 0
+    current_time_in_ticks = 0
     msg_num = 0
     for msg in track:
         if msg.is_meta == 0:
+            current_time_in_ticks += msg.time
             if msg.type == 'note_on':
-                #print('\n' + str(msg))
-                t_i += msg.time
                 A = msg.velocity
-                t_f = t_i + find_note_off(msg.note, track[msg_num:len(track)+1])
+                t_f = current_time_in_ticks + find_note_off(msg.note, track[msg_num:len(track)+1])
                 pitch = midi_to_freq(convert(msg.note))
-                new_note = Mynote(fs, pitch, t_i, t_f, A)
+                new_note = Mynote(fs, pitch, current_time_in_ticks, t_f, A)
                 notes.append(new_note)
-                #print('Pitch: {} \tt_i: {}   \tt_f: {}'.format(pitch, t_i, t_f))
-                msg_num += 1
+                #msg_num += 1
+        msg_num += 1
     return notes
 
 
@@ -122,12 +119,13 @@ largo = mid.length
 tempo_usable = 461538
 
 ins_note = Instrument('flute')
-sample_rate = ins_note.sample_rate
-print(sample_rate)
+sample_rate = 11025
+
 
 time = np.arange(0, largo, 1 / sample_rate)
 y = np.zeros(len(time))
 
+print('Puntos en arreglo Y: ' + str(len(y)))
 
 
 for note in note_list:
@@ -136,20 +134,36 @@ for note in note_list:
     pitch = note.pitch
 
     #busco que indice es el mas cercano al tiempo inicial de mi nota
-    index = find_nearest(time, note.get_initial_time_seconds(mid.ticks_per_beat, tempo_usable))
+    initial_time = note.get_initial_time_seconds(mid.ticks_per_beat, tempo_usable)
+
+    #print('initial time:  ' + str(initial_time))
+    begin_index = find_nearest(time, initial_time)
+    print('begin index:   ' + str(begin_index))
     #print('Tiempo incial: ' + str(note.get_initial_time_seconds(mid.ticks_per_beat, tempo_usable)))
     #print(index)
     #sintetizo nota
 
-    nota_musical = ins_note.get_sound(pitch, length)
+    #print('length   ' + str(length))
+    #nota_musical = ins_note.get_sound(pitch, length)
 
 
-    #guitarnote = GuitarString(pitch, sample_rate, 1, length * sample_rate, 'normal')
-    #sample = guitarnote.get_samples()
+    guitarnote = GuitarString(pitch, sample_rate, 1, length * sample_rate, 'normal')
+    sample = guitarnote.get_samples()
+
+    print('largo de nota musical:   ' + str(len(sample)))
     #Ahora debo sumar en el arreglo y, desde index hasta el final de mi nota
 
-    for idx in range(index, len(nota_musical)):
-        y[idx] += nota_musical[idx]
+    synth_note_index = 0
+    for idx in range(begin_index, begin_index + len(sample)):
+        try:
+            y[idx] += sample[synth_note_index]
+            synth_note_index += 1
+        except IndexError:
+            y = np.append(y, 0)
+            y[idx] += sample[synth_note_index]
+            synth_note_index += 1
+
+
 
 
 print(len(y) / sample_rate)
@@ -168,6 +182,7 @@ stream = p.open(format=pyaudio.paFloat32,
 stream.write(y.astype(np.float32).tostring())
 stream.close()
 
+print('termine')
 ###### Pruebas de Victor ########
 
 fs = 44100
@@ -191,7 +206,7 @@ for note in notes:
 # Combino los sonidos   
 # Básicamente, recorre cada objeto MyNota, se fija si a un tiempo 't' le corresponde tocar (devuelve 0 o x(t)) y suma todo lo que encuentre para el momento 't'. Así continúa con toda la secuencia.
 # Este nuevo arreglo deberías poder insertarlo al pyaudio. Es sólo el y(n) final con todas las notas juntas.
-guitar_sound = [sum(note.get_sample(t) for note in notes) for t in range(fs*6)]
+guitar_sound = np.array([sum(note.get_sample(t) for note in notes) for t in range(fs*6)])
 
 p = pyaudio.PyAudio()
 

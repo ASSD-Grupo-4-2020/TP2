@@ -49,7 +49,7 @@ def extend(sound, time, sustain_duration, sample_rate, instrument):
         cutoff = math.ceil(sustain_duration * sample_rate)
 
         chopped_sustain = chopped_sustain[:cutoff]
-        print(len(chopped_sustain))
+        #print(len(chopped_sustain))
 
     total = np.concatenate((chopped_attack, chopped_sustain, chopped_release))
 

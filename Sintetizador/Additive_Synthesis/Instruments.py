@@ -9,7 +9,7 @@ from nptowav.numpy_to_wav import write_timeline_to_wav
 
 violin_sample_rate, violin_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/violin-C4.wav')
 flute_sample_rate, flute_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/flute-G4.wav')
-trumpet_sample_rate, trumpet_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/trumpet-C4')
+trumpet_sample_rate, trumpet_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/trumpet-C4.wav')
 piano_sample_rate, piano_data = wavfile.read('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Additive_Synthesis/Wavs/piano-C4.wav')
 
 
@@ -144,7 +144,7 @@ class Instrument:
 
         #write_timeline_to_wav(path, fundamental, self.sample_rate)
 
-        return fundamental
+        return out
 
     def calculate_partial_shares(self):
         for k in range(len(self.partial_amps)):
