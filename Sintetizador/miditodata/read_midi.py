@@ -7,7 +7,9 @@ import mido
 import numpy as np
 
 from Additive_Synthesis.instrument_utils import find_nearest
+from nptowav.numpy_to_wav import write_timeline_to_wav
 from physical_synthesis.ks_guitar import GuitarString
+from Additive_Synthesis.Instruments import Instrument
 
 
 def midi_to_freq(midi_note):
@@ -68,7 +70,27 @@ class MyTrack:
 
     def add_note(self, new_note):
         self.notes.append(new_note)
-    
+
+
+def convert(real_note):
+    if real_note in range(24, 36):
+        return real_note + 36
+    elif real_note in range(36, 48):
+        return real_note + 24
+    elif real_note in range(48, 60):
+        return real_note + 12
+    elif real_note in range(72, 84):
+        return real_note - 12
+    elif real_note in range(84, 96):
+        return real_note - 24
+    elif real_note in range(96, 108):
+        return real_note - 36
+    elif real_note in range(108, 120):
+        return real_note - 48
+    elif real_note in range(120, 128):
+        return real_note - 60
+    else:
+        return  real_note
 
 def track_parse(track):
     fs = 44100
@@ -82,7 +104,7 @@ def track_parse(track):
                 t_i += msg.time
                 A = msg.velocity
                 t_f = t_i + find_note_off(msg.note, track[msg_num:len(track)+1])
-                pitch = midi_to_freq(msg.note)
+                pitch = midi_to_freq(convert(msg.note))
                 new_note = Mynote(fs, pitch, t_i, t_f, A)
                 notes.append(new_note)
                 #print('Pitch: {} \tt_i: {}   \tt_f: {}'.format(pitch, t_i, t_f))
@@ -96,33 +118,41 @@ note_list = track_parse(mid.tracks[1])
 
 
 largo = mid.length
-print(largo)
+#print(largo)
 tempo_usable = 461538
-sample_rate = 11025
 
-time = np.arange(0, largo, 1 / 11025)
+ins_note = Instrument('flute')
+sample_rate = ins_note.sample_rate
+print(sample_rate)
+
+time = np.arange(0, largo, 1 / sample_rate)
 y = np.zeros(len(time))
 
 
 
 for note in note_list:
     length = note.get_len_seconds(mid.ticks_per_beat, tempo_usable)
-    print(length)
+    #print(length)
     pitch = note.pitch
 
     #busco que indice es el mas cercano al tiempo inicial de mi nota
     index = find_nearest(time, note.get_initial_time_seconds(mid.ticks_per_beat, tempo_usable))
-    print(index)
+    #print('Tiempo incial: ' + str(note.get_initial_time_seconds(mid.ticks_per_beat, tempo_usable)))
+    #print(index)
     #sintetizo nota
 
-    guitarnote = GuitarString(pitch, 1 / sample_rate, 1, length * sample_rate, '2-level')
-    sample = guitarnote.get_samples()
+    nota_musical = ins_note.get_sound(pitch, length)
+
+
+    #guitarnote = GuitarString(pitch, sample_rate, 1, length * sample_rate, 'normal')
+    #sample = guitarnote.get_samples()
     #Ahora debo sumar en el arreglo y, desde index hasta el final de mi nota
 
-    for idx in range(index, len(sample)):
-        y[idx] += sample[idx]
+    for idx in range(index, len(nota_musical)):
+        y[idx] += nota_musical[idx]
 
 
+print(len(y) / sample_rate)
 import pyaudio
 p = pyaudio.PyAudio()
 
