@@ -154,12 +154,12 @@ class Instrument:
         plt.show()
 
 
-instrumneto = Instrument('flute')
+#instrumneto = Instrument('flute')
 #instrumneto.fft_data()
 
-c4 = instrumneto.get_sound(261, 1)
-e4 = instrumneto.get_sound(329, 1)
-g4 = instrumneto.get_sound(392, 1)
+#c4 = instrumneto.get_sound(261, 1)
+#e4 = instrumneto.get_sound(329, 1)
+#g4 = instrumneto.get_sound(392, 1)
 
 #path = '/Users/agustin/Desktop/c4.wav'
 
@@ -173,13 +173,13 @@ g4 = instrumneto.get_sound(392, 1)
 
 #write_timeline_to_wav(path, g4, instrumneto.sample_rate)
 
-acorde = c4 + e4 + g4
+#acorde = c4 + e4 + g4
 
 #path = '/Users/agustin/Desktop/acorde.wav'
 
 #write_timeline_to_wav(path, acorde, instrumneto.sample_rate)
 
-
+"""
 import pyaudio
 p = pyaudio.PyAudio()
 
@@ -194,3 +194,5 @@ stream = p.open(format=pyaudio.paFloat32,
 
 stream.write(acorde.astype(np.float32).tostring())
 stream.close()
+
+"""

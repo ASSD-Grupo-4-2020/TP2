@@ -3,7 +3,8 @@ Leo archivos midi y los interpreto
 
 """
 
-from mido import MidiFile
+import mido
+from Additive_Synthesis.Instruments import Instrument
 
 def midi_to_freq(midi_note):
     midiA4 = 69
@@ -72,3 +73,39 @@ def track_parse(track):
                 print('Pitch: {} \tt_i: {}   \tt_f: {}'.format(pitch, t_i, t_f))
                 msg_num += 1
     return notes
+
+mid = mido.MidiFile('tester.mid', clip=True)
+
+for msg in mid.tracks[0]:
+    print(msg)
+
+note_list = track_parse(mid.tracks[1])
+
+
+largo = mid.length
+print(largo)
+tempo_usable = 461538
+
+time = np.arange(0, largo, 1 / 11025)
+y = np.zeros(len(time))
+
+sintesis = Add_synth('violin')
+
+"""
+for note in note_list:
+    length = note.get_len_seconds(mid.ticks_per_beat, tempo_usable)
+    print(length)
+    pitch = note.pitch
+
+    #busco que indice es el ams cercano al tiempo inicial de mi nota
+    index = find_nearest(time, note.get_initial_time_seconds(mid.ticks_per_beat, tempo_usable))
+    print(index)
+    #sintetizo nota
+
+    nota = sintesis.get_sound(pitch/10, length)
+
+    #Ahora debo sumar en el arreglo y, desde index hasta el final de mi nota
+
+    for idx in range(index, len(nota)):
+        y[idx] += nota[idx]
+"""
