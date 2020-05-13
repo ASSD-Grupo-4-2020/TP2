@@ -1,7 +1,10 @@
 from PyQt5 import QtWidgets, QtCore
+from PyQt5.QtWidgets import QFileDialog
 
 from Frontend.MainWindow import Ui_MainWindow
 from Frontend.MplWidget import MplWidget
+
+from Player.Working_Classes import Player
 
 import sys
 
@@ -31,16 +34,16 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.ui.setupUi(self)
 
-        self.rows = 0
-        #esta lista contiene los marcos que a su vez tienen a la timeline y el panel de control dentro
-        self.tracks = []
+        #Este es el reporductor, aca tengo todos los tracks, el archivo midi y lo necesario para sintetizar
+        self.player = Player(11025)
 
 
         ###   Callbacks   ###
 
 
-        self.ui.pushButton.clicked.connect(self.add_track)
-        self.ui.pushButton_2.clicked.connect(self.remove_track)
+        self.ui.cargar_archivo.clicked.connect(self.load_mid)
+        #self.ui.pushButton.clicked.connect(self.add_track)
+        #self.ui.pushButton_2.clicked.connect(self.remove_track)
 
 
         ###   Callbacks   ###
@@ -122,9 +125,7 @@ class MainWindow(QtWidgets.QMainWindow):
         #t3rackframe.setObjectName("trackframe" + str(row + 1))
         #self.ui.trackwindow_layout.addWidget(trackframe, row + 1, 0, 1, 1)
 
-
-
-    #removes track from gui
+    # removes track from gui
     def remove_track(self):
         for widget in self.ui.scrollAreaWidgetContents.children():
             if type(widget) == TrackUI:
@@ -133,19 +134,31 @@ class MainWindow(QtWidgets.QMainWindow):
                 widget.deleteLater()
                 widget.wiget_name = None
 
-    #plays desired track
+    # Carga el archivo midi a player
+    def load_mid(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self, "QFileDialog.getOpenFileName()", "",
+                                                  "All Files (*);;Midi Files (*.mid)", options=options)
+        if fileName:
+            self.player.load_file(fileName)
+            self.player.create_tracks()
+            # en este punto tengo EN PLAYER todos los tracks del midi que abri con el boton, y cada track con su
+            # respectiva nota, etc...
+
+    # plays desired track
     def play_track(self):
         pass
 
-    #plays all the tracks at the same time
+    # plays all the tracks at the same time
     def play_song(self):
         pass
 
-    #plots track timelines
+    # plots track timelines
     def plot_timelines(self):
         pass
 
-    #Pots spectrogram
+    # Pots spectrogram
     def plot_spectrogram(self):
         pass
 

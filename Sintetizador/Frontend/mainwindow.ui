@@ -21,12 +21,15 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QScrollArea" name="scrollArea">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>10</y>
-      <width>761</width>
-      <height>621</height>
+      <y>0</y>
+      <width>771</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -37,13 +40,16 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>744</width>
+       <width>754</width>
        <height>3464</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="trackwindow_layout">
       <item>
        <widget class="QFrame" name="trackui1">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -78,17 +84,34 @@
             </size>
            </property>
            <layout class="QGridLayout" name="gridLayout">
-            <item row="1" column="0">
-             <widget class="QPushButton" name="pushButton_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Track 1</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track1_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="eliminar_track1">
               <property name="text">
                <string>Eliminar track</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label">
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track1">
               <property name="text">
-               <string>TextLabel</string>
+               <string>Reproducir Track</string>
               </property>
              </widget>
             </item>
@@ -110,6 +133,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -137,6 +163,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Track 2</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track2_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track2">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track2">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -154,6 +213,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui3">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -181,6 +243,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Track 3</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track3_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track3">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track3">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -198,6 +293,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui4">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -211,7 +309,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel4" native="true">
            <property name="minimumSize">
             <size>
@@ -225,6 +323,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Track 4</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track_checkbox_4">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track4">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track4">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -242,6 +373,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui5">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -255,7 +389,7 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item alignment="Qt::AlignLeft">
+         <item>
           <widget class="QWidget" name="trackpanel5" native="true">
            <property name="minimumSize">
             <size>
@@ -269,6 +403,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Track 5</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track5_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track5">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track5">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -286,6 +453,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui6">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -313,6 +483,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>Track 6</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track6_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track6">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track6">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -330,6 +533,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui7">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -357,6 +563,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>Track 7</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track7_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track7">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track7">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -374,6 +613,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui8">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -401,6 +643,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>Track 8</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track8_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track8">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track8">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -418,6 +693,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui9">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -445,6 +723,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>Track 9</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track9_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track9">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track9">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -462,6 +773,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui10">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -489,6 +803,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>Track 10</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track10_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track10">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track10">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -506,6 +853,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui11">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -533,6 +883,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_13">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>Track 11</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track11_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track11">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track11">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -550,6 +933,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui12">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -577,6 +963,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_14">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>Track 12</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track12_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track12">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track12">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -594,6 +1013,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui13">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -621,6 +1043,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_15">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Track 13</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track13_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track13">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track13">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -638,6 +1093,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui14">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -665,6 +1123,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_16">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>Track 14</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track14_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="eliminar_track14">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="reproducir_track4">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -682,6 +1173,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui15">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -709,6 +1203,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_17">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>Track 15</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track15_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track15">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track15">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -726,6 +1253,9 @@
       </item>
       <item>
        <widget class="QFrame" name="trackui16">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -753,6 +1283,39 @@
              <height>16777215</height>
             </size>
            </property>
+           <layout class="QGridLayout" name="gridLayout_18">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Track 16</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track16_checkbox">
+              <property name="text">
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="Eliminar_track16">
+              <property name="text">
+               <string>Eliminar track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track16">
+              <property name="text">
+               <string>Reproducir Track</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -771,13 +1334,13 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="Selector">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>291</width>
-      <height>321</height>
+      <y>70</y>
+      <width>301</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -786,18 +1349,356 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="3" column="1">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Agregar track</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QComboBox" name="instrument_selector">
+       <item>
+        <property name="text">
+         <string>Piano</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Flauta</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Violin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Trompeta</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="track_number">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Hay x Tracks en su archivo.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboBox_4">
+       <item>
+        <property name="text">
+         <string>Track 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 9</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 11</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 12</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 13</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 14</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 15</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Track 16</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QComboBox" name="synthesis_selector">
+       <item>
+        <property name="text">
+         <string>Sintesis aditiva</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sintesis fisica</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sintesis basada en muestras</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QPushButton" name="autofill_tracks">
+       <property name="text">
+        <string>Autofill Tracks</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="cargar_archivo">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>410</y>
-      <width>113</width>
+      <x>10</x>
+      <y>10</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cargar archivo</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="Reproductor">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>490</y>
+      <width>761</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Nota</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QComboBox" name="comboBox_3">
+       <item>
+        <property name="text">
+         <string>Piano</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Flauta</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Violin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Trompeta</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Do</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Re</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mi</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fa</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sol</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>La</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Si</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QComboBox" name="comboBox_2">
+       <item>
+        <property name="text">
+         <string>Sintesis aditiva</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sintesis por muestras</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sintesis física</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="text">
+        <string>Reproducir</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Instrumento</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Duración de nota:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Tipo de Sintesis:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="text">
+        <string>Nueva Nota</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="espectrograma" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>301</width>
+      <height>321</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="guardar_archivo">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Guardar archivo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>315</x>
+      <y>454</y>
+      <width>321</width>
       <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string>Agregar track</string>
+     <string>Reproducir Tracks seleccionados</string>
     </property>
    </widget>
   </widget>

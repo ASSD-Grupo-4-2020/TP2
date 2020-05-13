@@ -36,6 +36,7 @@ class Player:
             if track.iden == iden:
                 track.create_timebase()
                 track.create_sounds()
+                track.set_instrumetn(instrument)
 
                 for note in track.notes:
 
@@ -63,6 +64,7 @@ class Player:
     def set_sample_rate(self, sample_rate):
         self.sample_rate = sample_rate
 
+    #todo que reproduzca varios tracks al mismo tiempo (sumo todo lmao)
     def play_track(self, iden):
         sounds = self.tracks[iden - 1].sounds
         p = pyaudio.PyAudio()
@@ -87,6 +89,8 @@ class MyTrack:
         self.sounds = None
         self.tempo = 461538
         self.iden = iden
+        self.isonuse = False
+        self.instrument = None
 
     def parse_track(self, track):
         current_time_in_ticks = 0
@@ -113,6 +117,9 @@ class MyTrack:
 
     def set_tempo(self, tempo):
         self.tempo = tempo
+
+    def set_instrument(self, instrument):
+        self.instrument = instrument
 
 
 class Mynote:
