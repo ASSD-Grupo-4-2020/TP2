@@ -12,7 +12,7 @@ from Additive_Synthesis.instrument_utils import find_nearest
 
 from nptowav.numpy_to_wav import write_timeline_to_wav
 
-from miditodata.utils import midi_to_freq, find_note_off, synthesize
+from Player.utils import midi_to_freq, find_note_off, synthesize
 import pyaudio
 
 
