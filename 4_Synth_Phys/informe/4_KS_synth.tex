@@ -7,7 +7,7 @@ En este trabajo se analizaron el modelo básico para la síntesis de cuerdas per
 
 \section{Modelo Conceptual}
 
-En principio se trata de un sistema linear excitado con una secuencia aleatoria de longitud finita. Consiste de una línea de retarde de L muestras retroalimentadas mediante un filtro. Este se puede ver en la figura \ref{fig:KS_model}.
+En principio, el sistema se trata de un sistema linear excitado con una secuencia aleatoria de longitud finita $L$. El sistema consiste de una linea de retardo de $L$ muestras realimentadas a travéz de un filtro, tal como se ve en la figura \ref{fig:KS_model}.
 
 \begin{figure}[ht]
     \centering
@@ -16,21 +16,23 @@ En principio se trata de un sistema linear excitado con una secuencia aleatoria 
     \label{fig:KS_model}
 \end{figure}
 
-La línea de retardo simula cómo los distintos armónicos de una nota recorren la línea, se atenúan y decaen en el tiempo. Se suele utilizar un filtro pasa-bajos para atenuar más rápidamente los armónicos de más altas frecuencias. Nótese que la longitud de la secuencia de entrada debe tener una longitud $L \in \mathbb{N}$.
+La línea de retardo simula la cuerda, la cual los distintos armónicos de una nota recorren, se atenúan y decaen en el tiempo. En el modelo principal que se plantea en trabajo original de Kevin Karplus y Alex Strong, a la ausencia de algún filtro a la salida de la línea de retardo, la salida del sistema sería una repetición periódica de la señal entrante, lo que generaría un tono puro con una frecuencia de $f_s / L$, donde $f_s$ es la frecuencia de sampleo del sistema.
 
-La primera etapa de este modelo promedia dos muestras consecutivas. Este proceso puede describirse matemáticamente como la ecuación \eqref{eq:KS_avg}.
+La modificación que inventa Alex Strong es promediar dos muestras consecutivas del sistema, generando un decaimiento lento de la amplitud en el tiempo. Matemáticamente, esta operación puede expresarse como en la expresión \eqref{eq:KS_avg}.
 
 \begin{equation}
     Y_t = 0.5\times \left(Y_{t-L}+Y_{t-L-1}\right)
     \label{eq:KS_avg}
 \end{equation}
 
-Resulta que este promediamiento produce una onda que decae más lentamente en el tiempo. El onda generada por este algoritmo corresponde a un tono con período $L + 0.5$ muestras (que corresponde a una frecuencia de $f_s / (L+0.5)$) y suena más cercanamente al sonido de una cuerda punteada.
+Como consecuencia de esta modificación, la frecuencia del tono generado estará dada por la expresión \eqref{eq:KS_pitch}. Este tono tiene un sonido similar al de una cuerta percutida. Independientemente de las condiciones iniciales del sistema, el espectro decaerá hacia un tono puro, y eventualmente, a un valor constante (el silencio)
 
-Independientemente de las condiciones iniciales del sistema, el espectro decaerá a un tono puro, y eventualmente, a una constante (el silencio). A pesar que el modelo de recurrencia no tiene entrada, es necesario especificar condiciones iniciales no nulas para iniciarlo. Por otro lado, para producir un sonido realista, se desea que el impulso inicial contenga muchos armónicos.
-Esto se logra llenando el sistema con valores aleatorios al principio de cada nota generada. Dado que estas muestras aleatorias son repetidas periódicamente, no producen ruido.
+\begin{equation}
+    f = \frac{f_s}{L+1/2}
+    \label{eq:KS_pitch}
+\end{equation}
 
-Una manera de implementar esta aleatoriedad rápidamente es utilizando aleatoriedad de dos niveles, donde matemáticamente las condiciones iniciales están dadas por la expresión \eqref{eq:2_level_random}, donde $A$ será la amplitud de la onda.
+Dado que para producir un sonido realista, se desea que el impulso inicial del sistema contenga una gran variedad de armónicos. Para ello existen distintas opciones. La primera es la propuesta por el mismo trabajo de Karplus-Strong: una señal aleatoria bi-nivel cuya expresión matemática está dada por \eqref{eq:2_level_random}, donde $A$ es la amplitud de la nota. Otras opciones para la excitación inicial con ruido es utilizar señales de ruido con distribución uniforme o gaussiana. Como estas muestras iniciales son repetidas periódicamente, no generarán ruido en el fondo.
 
 \begin{equation}
     Y_t = 
@@ -42,7 +44,7 @@ Una manera de implementar esta aleatoriedad rápidamente es utilizando aleatorie
     \label{eq:2_level_random}
 \end{equation}
 
-El modelo final del modelo para una cuerda percutida estará dado por el visto en la figura \ref{fig:ks_original}. $x(n)$ será la señal inicial de entrada, que en este caso será una señal de ruido de longitud de muestras $L$.
+Finalemente, el modelo utilizado para simular la cuerda percutida será el de la figura \ref{fig:ks_original}. $x(n)$ será la señal inicial de entrada, por donde entrará la señal de ruido de longitud de muestras $L$.
 
 \begin{figure}[ht]
     \centering
@@ -51,7 +53,9 @@ El modelo final del modelo para una cuerda percutida estará dado por el visto e
     \label{fig:ks_original}
 \end{figure}
 
-Existe una modificación donde además del proceso de promediación, se cambia el signo de la muestra aleatoriamente, como se ve en la figura \ref{fig:ks_drum}. Su comportamiento queda evidenciado en la expresión \eqref{eq:ks_drum}:
+Modificando el modelo también es posible sintetizar instrumentos de percusión. Si se cambia el signo del promedio de las muestras aleatoriamente, como se ve en la figura \ref{fig:ks_drum}, matemáticamente tendrá un comportamiento expresado en \eqref{eq:ks_drum}. $b$ es llamado el factor de mezcla. Cuando $b=1$, el sistema se comporta normalmente y sigue simulando una cuerda. Cuando $b=0$, la señal es negada cada $L+0.5$ muestras, generando un sonido parecido a un arpa.
+
+Finalemente, cuando $b=0.5$ se pierde el "tono" del sonido y este se asemejará más a un sonido percutido. $L$ ya no controla el tono, sino el tiempo de decaimiento. Dado que la naturaleza aleatoria ya se encuentra dentro del sistema, es suficiente con inicializar el sistema con una señal constante en lugar de utilizar ruido.
 
 \begin{figure}[ht]
     \centering
@@ -69,30 +73,49 @@ Existe una modificación donde además del proceso de promediación, se cambia e
     \label{eq:ks_drum}
 \end{equation}
 
-donde $b$ se le llama factor de mezcla. Cuando $b = 0.5$ se produce un sonido similar a un tambor. Cualquier valor intermedio producirá sonidos entre una cuerda o tambor. Cuando $b = 0$ la señal es negada cada $L + 0.5$ muestras, produciendo un sonido de ``botella percutida'' a altas frecuencias, y un sonido de harpa a bajas frecuencias.
-
-Cuando $b=0.5$, la longitud de las muestras ya no controla el tono del sonido, ya que el sonido ya no es periódico. En lugar de eso, $L$ controla el tiempo de decaimiento del ruido de manera proporcional. Para estos, la señal de entrada puede simplemente ser una constante $A$, dado que el algoritmo mismo generará la aleatoriedad.
-
-Limitando los valores de $b$ a $\left\{ 0;0.5;1\right\}$ será suficiente utilizar solo un bit para generar la aleatoriedad. Si se usaren otros valores será necesario utilizar un generador de números aleatorios más sofisticado.
-
 \section{Transferencia del Modelo}
 
-A partir del modelo de la figura \ref{fig:ks_original} se obtiene que la función transferencia estará dada por \eqref{eq:Hz_KS}
+Se calculó la función transferencia del modelo original de Karplus-Strong.
+
+La transferencia del promedio está dada por
 
 \begin{equation}
-    H(z) = \frac{1/2\cdot (1+z^{-1})}{1-1/2\cdot z^{-L}(1+z^{-1})}= \frac{z+1}{2z^{L+1}-z-1}
-    \label{eq:Hz_KS}
+    H_a(z) = \frac{1+z^{-1}}{2}
 \end{equation}
 
-Los polos pueden ser encontrados mediante la expresión $2z^{L+1}-z-1 = 0$ mientras que se encuentra el único cero en $z=-1$. Este corresponde a la frecuencia de Nyquist $f_s/2$.
-
-Se pueden aproximar las raíces de $2z^{L+1}-z-1 = 0$ si la expresamos de la forma $2z^{L+1/2} = z^{1/2} + z^{-1/2}$. Reemplazando $z=a e^{j\omega}$ se obtiene:
+y la transferencia de la línea de retardo está dada por
 
 \begin{equation}
-    2 a^{L+1/2} e^{j\omega (L+1/2)} = a^{1/2}e^{j\omega/2} + a^{-1/2}e^{-j\omega/2}
+    H_b(z) = z^{-L}
 \end{equation}
 
-Aproximando $e^{j\omega}(L+1/2) \approx 1$ se despeja que $\omega = 2 \pi n / (L+1/2)$. Aproximando $2 a^{p+1/2}\approx 2 cos(\omega/2)$ se puede despejar la constante del tiempo de caída del n-ésimo armónico, siendo
+Con esto, se obtiene que la transferencia de todo el sistema está dada por
+
 \begin{equation}
-    a=\left[cos\left( \frac{2 \pi n}{2L+1}\right)\right]^{1/(L+1/2)}
+    H(z) = \frac{1}{1- H_a(z) H_b(z)} = \frac{1/2\cdot (1+z^{-1})}{1-1/2\cdot z^{-L}(1+z^{-1})}= \frac{z+1}{2z^{L+1}-z-1}
+    \label{eq:KS_H}
 \end{equation}
+
+A partir de la expresión \eqref{eq:KS_H} se puede calcular que existe un único cero en $z=-1$, que corresponde a la frecuencia de Nyquist $f_s/2$. Los polos pueden ser encontrados calculando las raíces de la expresión $2z^{L+1}-z-1 = 0$. Estas se pueden aproximar si la expresamos de la forma $2z^{L+1/2} = z^{1/2} + z^{-1/2}$. Reemplazando $z=a e^{j\omega}$ se obtiene:
+
+\begin{equation}
+    2 a^{L+1/2} e^{j\omega(L+1/2)} = a^{1/2}e^{j\omega/2} + a^{-1/2}e^{-j\omega/2}=\sqrt{a + a^{-1} + 2 \cos\omega } \cdot e^{j\theta}
+\end{equation}
+
+Analizando las partes imaginarias, se obtiene que
+
+\begin{equation*}
+    \sqrt{a + a^{-1} + 2 \cos\omega } \sin\theta = (a^{1/2} - a^{-1/2}) \sin\frac{\omega}{2}
+\end{equation*}
+
+Aproximando $e^{j\omega(L+1/2)} \approx 1$ se despeja que $\omega = 2 \pi n / (L+1/2)$. Aproximando $2 a^{p+1/2}\approx 2 cos(\omega/2)$ se puede despejar la constante del tiempo de caída del n-ésimo armónico, siendo
+\begin{equation}
+    a=\left[\cos\left( \frac{2 \pi n}{2L+1}\right)\right]^{1/(L+1/2)} = \left[\cos\left( \pi n \frac{f}{f_s}\right) \right]^{f/f_s}
+\end{equation}
+
+Por lo tanto, los polos estarán ubicados en $z = a e^{j\omega}$ donde
+
+\begin{equation*}
+    a = \left[\cos\left( \frac{2 \pi n}{2L+1}\right)\right]^{1/(L+1/2)} \qquad \omega = \frac{2 \pi n}{L+1/2}
+\end{equation*}
+
