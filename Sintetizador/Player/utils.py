@@ -26,21 +26,21 @@ def find_note_off(note, track):
 
 #Covierte a la 4ta octava, todo mejorar repeticiond e codigo.
 def convert_4oct(real_note):
-    if real_note in range(24, 36):
+    if round(real_note) in range(24, 36):
         return real_note + 36
-    elif real_note in range(36, 48):
+    elif round(real_note) in range(36, 48):
         return real_note + 24
-    elif real_note in range(48, 60):
+    elif round(real_note) in range(48, 60):
         return real_note + 12
-    elif real_note in range(72, 84):
+    elif round(real_note) in range(72, 84):
         return real_note - 12
-    elif real_note in range(84, 96):
+    elif round(real_note) in range(84, 96):
         return real_note - 24
-    elif real_note in range(96, 108):
+    elif round(real_note) in range(96, 108):
         return real_note - 36
-    elif real_note in range(108, 120):
+    elif round(real_note) in range(108, 120):
         return real_note - 48
-    elif real_note in range(120, 128):
+    elif round(real_note) in range(120, 128):
         return real_note - 60
     else:
         return real_note

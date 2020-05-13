@@ -5,6 +5,8 @@ Leo archivos midi y los interpreto
 
 import mido
 import numpy as np
+from audiolazy.lazy_midi import freq2midi
+
 
 from physical_synthesis.ks_guitar import GuitarString
 
@@ -12,7 +14,7 @@ from Additive_Synthesis.instrument_utils import find_nearest
 
 from nptowav.numpy_to_wav import write_timeline_to_wav
 
-from Player.utils import midi_to_freq, find_note_off, synthesize
+from Player.utils import midi_to_freq, find_note_off, synthesize, convert_4oct
 import pyaudio
 
 
@@ -24,6 +26,7 @@ class Player:
 
     def load_file(self, path):
         self.mid = mido.MidiFile(path, clip=True)
+        self.tracks = []
 
     def create_tracks(self):
         for k in range(1, len(self.mid.tracks)):
@@ -36,12 +39,19 @@ class Player:
             if track.iden == iden:
                 track.create_timebase()
                 track.create_sounds()
-                track.set_instrumetn(instrument)
+                track.set_instrument(instrument)
 
                 for note in track.notes:
 
                     length = note.get_len_seconds(self.mid.ticks_per_beat, track.tempo)
                     pitch = note.pitch
+
+                    #if form == 'additive' and pitch > 750:
+                    #    pitch = convert_4oct(freq2midi(pitch))
+                    #    print(pitch)
+                    #    #pitch = midi_to_freq(pitch)
+
+                    #print(pitch)
 
                     # busco que indice es el mas cercano al tiempo inicial de mi nota
                     initial_time = note.get_initial_time_seconds(self.mid.ticks_per_beat, track.tempo)
@@ -80,6 +90,7 @@ class Player:
         stream.write(sounds.astype(np.float32).tostring())
         stream.close()
 
+
 class MyTrack:
     def __init__(self, sample_rate, length, iden):
         self.notes = []
@@ -89,7 +100,7 @@ class MyTrack:
         self.sounds = None
         self.tempo = 461538
         self.iden = iden
-        self.isonuse = False
+        self.reproductor = None
         self.instrument = None
 
     def parse_track(self, track):
@@ -102,7 +113,8 @@ class MyTrack:
                 if msg.type == 'note_on':
                     amp = msg.velocity
                     t_f = current_time_in_ticks + find_note_off(msg.note, track[msg_num:len(track) + 1])
-                    pitch = midi_to_freq(msg.note) #Agregar que convierta a la cuarta octava si es sintesis aditiva
+                    pitch = midi_to_freq(msg.note)
+
 
                     new_note = Mynote(self.sample_rate, pitch, current_time_in_ticks, t_f, amp)
                     self.notes.append(new_note)
@@ -120,6 +132,9 @@ class MyTrack:
 
     def set_instrument(self, instrument):
         self.instrument = instrument
+
+    def set_reproductor(self, number):
+        self.reproductor = number
 
 
 class Mynote:
@@ -157,11 +172,12 @@ class Mynote:
 
 #### Prueba de funcionamiento
 
-player = Player(11025)
-player.load_file('tester.mid')
-player.create_tracks()
-player.synthesize_track(1, 'physical', 'guitar')
-player.play_track(1)
+#player = Player(11025)
+#player.load_file('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Midis/Lalaland.mid')
+#player.create_tracks()
+#print('creadas')
+#player.synthesize_track(1, 'physical', 'guitar')
+#player.play_track(1)
 
 
 ###### Pruebas de Victor ########

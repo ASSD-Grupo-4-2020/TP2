@@ -20,12 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b387a286-79e5-4cbc-8253-e73509585292" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Midis/Lalaland.mid" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Player/tes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/Instruments.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/Instruments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Additive_Synthesis/instrument_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Additive_Synthesis/instrument_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Tracks.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/mainwindow.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/read_midi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Working_Classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Working_Classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Working_Classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +63,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Midis" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
       <recent name="$PROJECT_DIR$/Frontend" />
-      <recent name="$PROJECT_DIR$/prueba midi" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
@@ -83,6 +87,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive_Synthesis/Instruments.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Working_Classes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Player" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Player/Working_Classes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,27 +158,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prueba" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Sintetizador" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs/prueba.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="read_midi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Sintetizador" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,7 +179,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Sintetizador" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -183,11 +187,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Additive_Synthesis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Player" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Additive_Synthesis/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Player/tes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -220,18 +224,18 @@
     <list>
       <item itemvalue="Python.Instruments" />
       <item itemvalue="Python.instruments (1)" />
-      <item itemvalue="Python.prueba" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.read_midi" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.tes" />
+      <item itemvalue="Python.Working_Classes" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.Working_Classes" />
+        <item itemvalue="Python.tes" />
         <item itemvalue="Python.read_midi" />
         <item itemvalue="Python.instruments (1)" />
-        <item itemvalue="Python.prueba" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -285,67 +289,67 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="703" height="466" key="DebuggerActiveHint/0.23.1920.1057@0.23.1920.1057" timestamp="1589322624705" />
-    <state width="1522" height="184" key="GridCell.Tab.0.bottom" timestamp="1589392929206">
+    <state width="1522" height="184" key="GridCell.Tab.0.bottom" timestamp="1589409141428">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784675" />
-    <state width="1522" height="184" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589392929206" />
+    <state width="1522" height="184" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589409141428" />
     <state width="1522" height="223" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.bottom/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
     <state width="1522" height="173" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
-    <state width="1522" height="184" key="GridCell.Tab.0.center" timestamp="1589392929205">
+    <state width="1522" height="184" key="GridCell.Tab.0.center" timestamp="1589409141428">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784673" />
-    <state width="1522" height="184" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589392929205" />
+    <state width="1522" height="184" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589409141428" />
     <state width="1522" height="223" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.center/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
     <state width="1522" height="173" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
-    <state width="1522" height="184" key="GridCell.Tab.0.left" timestamp="1589392929205">
+    <state width="1522" height="184" key="GridCell.Tab.0.left" timestamp="1589409141427">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784673" />
-    <state width="1522" height="184" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589392929205" />
+    <state width="1522" height="184" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589409141427" />
     <state width="1522" height="223" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.left/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
     <state width="1522" height="173" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1589045635689" />
-    <state width="1522" height="184" key="GridCell.Tab.0.right" timestamp="1589392929206">
+    <state width="1522" height="184" key="GridCell.Tab.0.right" timestamp="1589409141428">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784674" />
-    <state width="1522" height="184" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589392929206" />
+    <state width="1522" height="184" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589409141428" />
     <state width="1522" height="223" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.right/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
     <state width="1522" height="173" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
-    <state width="1522" height="339" key="GridCell.Tab.1.bottom" timestamp="1589325157941">
+    <state width="1522" height="339" key="GridCell.Tab.1.bottom" timestamp="1589404153692">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="309" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1589173734951" />
-    <state width="1522" height="339" key="GridCell.Tab.1.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589325157941" />
+    <state width="1522" height="339" key="GridCell.Tab.1.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589404153692" />
     <state width="1522" height="255" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1589052229492" />
-    <state width="1522" height="339" key="GridCell.Tab.1.center" timestamp="1589325157941">
+    <state width="1522" height="339" key="GridCell.Tab.1.center" timestamp="1589404153691">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="309" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1589173734950" />
-    <state width="1522" height="339" key="GridCell.Tab.1.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589325157941" />
+    <state width="1522" height="339" key="GridCell.Tab.1.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589404153691" />
     <state width="1522" height="255" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1589052229492" />
-    <state width="1522" height="339" key="GridCell.Tab.1.left" timestamp="1589325157940">
+    <state width="1522" height="339" key="GridCell.Tab.1.left" timestamp="1589404153691">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="309" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1589173734949" />
-    <state width="1522" height="339" key="GridCell.Tab.1.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589325157940" />
+    <state width="1522" height="339" key="GridCell.Tab.1.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589404153691" />
     <state width="1522" height="255" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1589052229491" />
-    <state width="1522" height="339" key="GridCell.Tab.1.right" timestamp="1589325157941">
+    <state width="1522" height="339" key="GridCell.Tab.1.right" timestamp="1589404153692">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="309" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1589173734951" />
-    <state width="1522" height="339" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589325157941" />
+    <state width="1522" height="339" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589404153692" />
     <state width="1522" height="255" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1589052229492" />
-    <state x="426" y="282" key="SettingsEditor" timestamp="1589240989050">
+    <state x="426" y="282" key="SettingsEditor" timestamp="1589402681469">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="426" y="265" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1588956130963" />
-    <state x="426" y="282" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1589240989050" />
+    <state x="426" y="282" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1589402681469" />
     <state x="426" y="263" key="SettingsEditor/0.23.1920.977@0.23.1920.977" timestamp="1588804609126" />
     <state x="0" y="0" width="1920" height="1080" key="dock-window-1" timestamp="1589175884103">
       <screen x="0" y="23" width="1920" height="1057" />

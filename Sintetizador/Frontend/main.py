@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QFrame
 
 from Frontend.MainWindow import Ui_MainWindow
 from Frontend.MplWidget import MplWidget
@@ -40,99 +40,33 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ###   Callbacks   ###
 
+        self.ui.Reproducir_track1.clicked.connect(lambda: self.play_track(1))
+        self.ui.Reproducir_track2.clicked.connect(lambda: self.play_track(2))
+        self.ui.Reproducir_track3.clicked.connect(lambda: self.play_track(3))
+        self.ui.Reproducir_track4.clicked.connect(lambda: self.play_track(4))
+        self.ui.Reproducir_track5.clicked.connect(lambda: self.play_track(5))
+        self.ui.Reproducir_track6.clicked.connect(lambda: self.play_track(6))
+        self.ui.Reproducir_track7.clicked.connect(lambda: self.play_track(7))
+        self.ui.Reproducir_track8.clicked.connect(lambda: self.play_track(8))
+        self.ui.Reproducir_track9.clicked.connect(lambda: self.play_track(9))
+        self.ui.Reproducir_track10.clicked.connect(lambda: self.play_track(10))
+        self.ui.Reproducir_track11.clicked.connect(lambda: self.play_track(11))
+        self.ui.Reproducir_track12.clicked.connect(lambda: self.play_track(12))
+        self.ui.Reproducir_track13.clicked.connect(lambda: self.play_track(13))
+        self.ui.Reproducir_track14.clicked.connect(lambda: self.play_track(14))
+        self.ui.Reproducir_track15.clicked.connect(lambda: self.play_track(15))
+        self.ui.Reproducir_track16.clicked.connect(lambda: self.play_track(16))
+
+
 
         self.ui.cargar_archivo.clicked.connect(self.load_mid)
+        self.ui.synthesis_selector.currentIndexChanged.connect(self.change_synth)
+        self.ui.add_track.clicked.connect(self.add_track)
         #self.ui.pushButton.clicked.connect(self.add_track)
         #self.ui.pushButton_2.clicked.connect(self.remove_track)
 
 
         ###   Callbacks   ###
-
-
-    #creates track object
-    def create_track(self):
-        pass
-
-
-    #adds track to gui
-    def add_track(self):
-
-        #track = TrackUI()
-        #track.setParent(self.ui.scrollAreaWidgetContents)
-        self.ui.trackwindow_layout.addWidget(TrackUI())
-        #self.rows += 1
-
-        #frame = QtWidgets.QFrame(self.ui.scrollAreaWidgetContents)
-        #frame.setMinimumSize(QtCore.QSize(0, 230))
-        ##frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        #frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        #frame.setObjectName("frame" + str(self.rows + 1))
-
-        #horizontallayout = QtWidgets.QHBoxLayout(frame)
-        #horizontallayout.setObjectName("horizontalLayout" + str(self.rows + 1))
-
-        #control_panel = QtWidgets.QWidget(frame)
-        #control_panel.setMinimumSize(QtCore.QSize(150, 0))
-        #control_panel.setObjectName("control_panel" + str(self.rows + 1))
-        #horizontallayout.addWidget(control_panel)
-
-        #tracktimeline = MplWidget(frame)
-        #tracktimeline.setMinimumSize(QtCore.QSize(400, 0))
-        #tracktimeline.setObjectName("tracktimeline" + str(self.rows + 1))
-        #horizontallayout.addWidget(tracktimeline)
-
-        #elf.ui.trackwindow_layout.addWidget(frame)
-        #self.tracks.append(frame)
-        lista = self.ui.scrollAreaWidgetContents.children()
-
-        print(lista)
-
-
-
-
-
-
-        #frame = QtWidgets.QFrame(self.ui.scrollAreaWidgetContents)
-        #sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        #sizePolicy.setHorizontalStretch(0)
-        #sizePolicy.setVerticalStretch(0)
-        #sizePolicy.setHeightForWidth(frame.sizePolicy().hasHeightForWidth())
-        #frame.setSizePolicy(sizePolicy)
-        #frame.setMinimumSize(QtCore.QSize(0, 200))
-        #frame.setObjectName("frame" + str(row + 1))
-        #self.ui.trackwindow_layout.addWidget(frame, row + 1, 1, 1, 1)
-
-        #tracktimeline = MplWidget(frame)
-        #sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        #sizePolicy.setHorizontalStretch(0)
-        #sizePolicy.setVerticalStretch(0)
-        #sizePolicy.setHeightForWidth(tracktimeline.sizePolicy().hasHeightForWidth())
-        #tracktimeline.setSizePolicy(sizePolicy)
-        #tracktimeline.setMinimumSize(QtCore.QSize(400, 200))
-        #tracktimeline.setObjectName("tracktimeline" + str(row + 1))
-        #self.ui.trackwindow_layout.addWidget(tracktimeline, row + 1, 1, 1, 1)
-
-
-        #trackframe = QtWidgets.QFrame(self.ui.scrollAreaWidgetContents)
-        #sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        #sizePolicy.setHorizontalStretch(0)
-        #sizePolicy.setVerticalStretch(0)
-        #sizePolicy.setHeightForWidth(trackframe.sizePolicy().hasHeightForWidth())
-        #trackframe.setSizePolicy(sizePolicy)
-        #trackframe.setMinimumSize(QtCore.QSize(150, 100))
-        #trackframe.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        #trackframe.setFrameShadow(QtWidgets.QFrame.Raised)
-        #t3rackframe.setObjectName("trackframe" + str(row + 1))
-        #self.ui.trackwindow_layout.addWidget(trackframe, row + 1, 0, 1, 1)
-
-    # removes track from gui
-    def remove_track(self):
-        for widget in self.ui.scrollAreaWidgetContents.children():
-            if type(widget) == TrackUI:
-                print(type(widget))
-                self.ui.trackwindow_layout.removeWidget(widget)
-                widget.deleteLater()
-                widget.wiget_name = None
 
     # Carga el archivo midi a player
     def load_mid(self):
@@ -143,12 +77,64 @@ class MainWindow(QtWidgets.QMainWindow):
         if fileName:
             self.player.load_file(fileName)
             self.player.create_tracks()
+            print(self.player.tracks)
             # en este punto tengo EN PLAYER todos los tracks del midi que abri con el boton, y cada track con su
             # respectiva nota, etc...
 
+            self.ui.track_number.setText('Hay %s tracks en su archivo MIDI' % len(self.player.tracks))
+
+            self.ui.track_selector.clear()
+            for track in self.player.tracks:
+                self.ui.track_selector.addItem('Track %s' % track.iden)
+
+    def change_synth(self):
+        current_text = self.ui.synthesis_selector.currentText()
+        if current_text == 'Sintesis aditiva':
+            self.ui.instrument_selector.clear()
+            self.ui.instrument_selector.addItems(['flute', 'piano', 'violin', 'trumpet'])
+        elif current_text == 'Sintesis fisica':
+            self.ui.instrument_selector.clear()
+            self.ui.instrument_selector.addItems(['guitar', 'drums'])
+        elif current_text == 'Sintesis basada en muestras':
+            pass
+
+    def add_track(self):
+        reproductor  = 0
+        for ui in self.ui.scrollAreaWidgetContents.children():
+            reproductor += 1
+            if isinstance(ui, QFrame) and not ui.isEnabled():
+                # Agrego track al primer reproductor desactivado que encuentro
+                ui.setEnabled(True)
+
+                lista = self.ui.track_selector.currentText().split()
+                ind = int(lista[1])
+
+                self.ui.track_selector.removeItem(self.ui.track_selector.currentIndex())
+
+                current_instrument = self.ui.instrument_selector.currentText()
+                current_form = self.ui.synthesis_selector.currentText()
+
+                # todo agregar sintesis basada en muestras
+                if current_form == 'Sintesis aditiva':
+                    current_form = 'additive'
+                elif current_form == 'Sintesis fisica':
+                    current_form = 'physical'
+                elif current_form == 'Sintesis basada en muestras':
+                    pass
+
+                self.player.tracks[ind - 1].set_reproductor(reproductor)
+
+                self.player.synthesize_track(ind, current_form, current_instrument)
+                print('sintetizo')
+
+                self.player.play_track(ind)
+
+                break
+
+
     # plays desired track
-    def play_track(self):
-        pass
+    def play_track(self, iden):
+        self.player.play_track(iden)
 
     # plays all the tracks at the same time
     def play_song(self):
@@ -161,30 +147,6 @@ class MainWindow(QtWidgets.QMainWindow):
     # Pots spectrogram
     def plot_spectrogram(self):
         pass
-
-
-class TrackUI(QtWidgets.QFrame):
-    def __init__(self, parent=None):
-        super(TrackUI, self).__init__(parent)
-
-        self.setMinimumSize(QtCore.QSize(0, 230))
-
-        self.control_panel = QtWidgets.QWidget()
-        self.control_panel.setMinimumSize(QtCore.QSize(150, 0))
-
-        self.tracktimeline = MplWidget()
-        self.tracktimeline.setMinimumSize(QtCore.QSize(400, 0))
-
-        layout = QtWidgets.QHBoxLayout()
-
-        layout.addWidget(self.control_panel)
-        layout.addWidget(self.tracktimeline)
-
-        self.setLayout(layout)
-
-
-
-
 
 
 

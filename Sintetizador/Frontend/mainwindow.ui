@@ -39,7 +39,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>-2577</y>
        <width>754</width>
        <height>3464</height>
       </rect>
@@ -1149,7 +1149,7 @@
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QPushButton" name="reproducir_track4">
+             <widget class="QPushButton" name="Reproducir_track14">
               <property name="text">
                <string>Reproducir Track</string>
               </property>
@@ -1351,7 +1351,7 @@
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="3" column="1">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="add_track">
        <property name="text">
         <string>Agregar track</string>
        </property>
@@ -1361,22 +1361,22 @@
       <widget class="QComboBox" name="instrument_selector">
        <item>
         <property name="text">
-         <string>Piano</string>
+         <string>piano</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Flauta</string>
+         <string>flute</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Violin</string>
+         <string>violin</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Trompeta</string>
+         <string>trumpet</string>
         </property>
        </item>
       </widget>
@@ -1394,91 +1394,24 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QComboBox" name="comboBox_4">
-       <item>
-        <property name="text">
-         <string>Track 1</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 2</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 3</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 4</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 5</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 6</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 7</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 8</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 9</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 10</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 11</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 12</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 13</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 14</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 15</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Track 16</string>
-        </property>
-       </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_21">
+       <property name="text">
+        <string>Seleccione un Track</string>
+       </property>
       </widget>
      </item>
-     <item row="2" column="0">
+     <item row="1" column="1">
+      <widget class="QComboBox" name="track_selector"/>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QPushButton" name="reset">
+       <property name="text">
+        <string>Reset Tracks</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
       <widget class="QComboBox" name="synthesis_selector">
        <item>
         <property name="text">
@@ -1495,13 +1428,6 @@
          <string>Sintesis basada en muestras</string>
         </property>
        </item>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="2">
-      <widget class="QPushButton" name="autofill_tracks">
-       <property name="text">
-        <string>Autofill Tracks</string>
-       </property>
       </widget>
      </item>
     </layout>

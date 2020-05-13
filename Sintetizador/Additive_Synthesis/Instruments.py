@@ -21,7 +21,7 @@ class Instrument:
         if self.instrument == 'violin':
             self.sample_rate = violin_sample_rate
             self.data = violin_data
-            self.harmonics_n = 13
+            self.harmonics_n = 5
             self.fundamental_frequency = 261
             self.cutoff = 80
             self.fundamental_amp = 1.662e7
@@ -40,7 +40,7 @@ class Instrument:
         elif self.instrument == 'piano':
             self.sample_rate = piano_sample_rate
             self.data = piano_data
-            self.harmonics_n = 10
+            self.harmonics_n = 5
             self.fundamental_frequency = 261
             self.cutoff = 40
             self.fundamental_amp = 5.3073e6
@@ -49,7 +49,7 @@ class Instrument:
         elif self.instrument == 'trumpet':
             self.sample_rate = trumpet_sample_rate
             self.data = trumpet_data
-            self.harmonics_n = 17
+            self.harmonics_n = 5
             self.fundamental_frequency = 261
             self.cutoff = 30
             self.fundamental_amp = 2.165e6
@@ -75,16 +75,24 @@ class Instrument:
 
         datafft = fft(self.data)
 
+
         freqs = fftfreq(samples, 1 / self.sample_rate)
+
 
         pos_freqs = freqs[:int(len(freqs) / 2)]
 
+
+
         index_pos_fundamental = find_nearest(pos_freqs, self.fundamental_frequency)
         index_pos_target = find_nearest(pos_freqs, frequency)
+        # Si el indice es el ultimo significa que la frecuencia es muy alta, entonces debo alargar mis arreglos de frecuencia
+
+
         diff = index_pos_target - index_pos_fundamental
 
         mask = np.copy(datafft)
         empty = []
+
 
         self.calculate_partial_shares()
 
@@ -127,22 +135,15 @@ class Instrument:
         max_smooth = np.amax(suave)
         suave = suave / max_smooth
 
-        #for k in range(1):
-        #    suave = smooth(suave)
-
-        new_time = np.arange(0, len(suave) / self.sample_rate, 1 / self.sample_rate)
-
         fundamental = generate_wave(frequency, suave, self.sample_rate)
 
         for v in range(2, self.harmonics_n + 1):
             sobretono = generate_wave(frequency * v, suave, self.sample_rate)
             fundamental += self.partial_amps[v - 2] * sobretono
 
+        fundamental *= suave
+
         out = extend(fundamental, time, duration, self.sample_rate, self.instrument)
-
-        #path = '/Users/agustin/Desktop/flauta.wav'
-
-        #write_timeline_to_wav(path, fundamental, self.sample_rate)
 
         return out
 
@@ -155,12 +156,11 @@ class Instrument:
         plt.show()
 
 
-#instrumneto = Instrument('flute')
+#instrumneto = Instrument('violin')
 #instrumneto.fft_data()
 
-#c4 = instrumneto.get_sound(261, 1)
-#e4 = instrumneto.get_sound(329, 1)
-#g4 = instrumneto.get_sound(392, 1)
+#c4 = instrumneto.get_sound(261, 2)
+
 
 #path = '/Users/agustin/Desktop/c4.wav'
 
@@ -180,6 +180,7 @@ class Instrument:
 
 #write_timeline_to_wav(path, acorde, instrumneto.sample_rate)
 
+
 """
 import pyaudio
 p = pyaudio.PyAudio()
@@ -193,7 +194,7 @@ stream = p.open(format=pyaudio.paFloat32,
                 )
 
 
-stream.write(acorde.astype(np.float32).tostring())
+stream.write(c4.astype(np.float32).tostring())
 stream.close()
 
 """
