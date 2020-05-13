@@ -18,7 +18,7 @@ def shift2(arr, num):
          np.put(arr, range(num), 0)
     return arr
 
-#todo agregar extender a notas de piano, flauta trompeta
+
 def extend(sound, time, sustain_duration, sample_rate, instrument):
 
     sustain_timepoints = math.ceil(sustain_duration * sample_rate)
