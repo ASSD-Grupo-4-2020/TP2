@@ -27,7 +27,26 @@ def flange2(data, speed, depth, inv, fs, min_delay = 1, max_delay = 10):
         depth: g [0,1]
         Delay: Minimum delay (minimum 0.001)
         inv: invertion mode"""
-    speed = 0.1*speed
+    speed = (1-0.1)*speed/100 + 0.1
+    out = data.copy()
+    Mo = min_delay/1000 * fs
+    Mw = (max_delay-min_delay)/1000 * fs
+    if inv: depth *= -1
+    for i in range(len(data)):
+        M = Mo + Mw/2 * (1 + np.sin(2*np.pi* speed/fs * i))
+        index = int(i-M)
+        if index >= 0 and index<len(data):
+            out[i] = data[i] + depth * data[index]
+
+    return out
+
+def chorus(data, speed, depth, inv, fs, min_delay = 20, max_delay = 30):
+    """ Data: Input Signal
+        Speed %: f_LFO [0.1,10] Hz
+        depth: g [0,1]
+        Delay: Minimum delay (minimum 0.001)
+        inv: invertion mode"""
+    speed = (3-0.1)*speed/100 + 0.1
     out = data.copy()
     Mo = min_delay/1000 * fs
     Mw = (max_delay-min_delay)/1000 * fs
