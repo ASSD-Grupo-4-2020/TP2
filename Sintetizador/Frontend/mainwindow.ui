@@ -39,7 +39,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-500</y>
+       <y>-51</y>
        <width>754</width>
        <height>3464</height>
       </rect>
@@ -404,20 +404,10 @@
             </size>
            </property>
            <layout class="QGridLayout" name="gridLayout_7">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_9">
+            <item row="1" column="0">
+             <widget class="QPushButton" name="Reproducir_track5">
               <property name="text">
-               <string>Track 5</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QCheckBox" name="track5_checkbox">
-              <property name="text">
-               <string>Seleccionar Track</string>
+               <string>Reproducir Track</string>
               </property>
              </widget>
             </item>
@@ -428,10 +418,20 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QPushButton" name="Reproducir_track5">
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="track5_checkbox">
               <property name="text">
-               <string>Reproducir Track</string>
+               <string>Seleccionar Track</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Track 5</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -1338,7 +1338,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>70</y>
+      <y>42</y>
       <width>301</width>
       <height>231</height>
      </rect>
@@ -1438,7 +1438,7 @@
       <x>10</x>
       <y>10</y>
       <width>301</width>
-      <height>51</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -1448,10 +1448,10 @@
    <widget class="QFrame" name="Reproductor">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>490</y>
-      <width>771</width>
-      <height>141</height>
+      <x>680</x>
+      <y>500</y>
+      <width>411</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -1591,13 +1591,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="espectrograma" native="true">
+   <widget class="MplWidget" name="espectrograma" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>310</y>
-      <width>301</width>
-      <height>321</height>
+      <x>0</x>
+      <y>330</y>
+      <width>341</width>
+      <height>331</height>
      </rect>
     </property>
    </widget>
@@ -1605,7 +1605,7 @@
     <property name="geometry">
      <rect>
       <x>938</x>
-      <y>455</y>
+      <y>460</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -1617,10 +1617,10 @@
    <widget class="QPushButton" name="Reproducir_todo">
     <property name="geometry">
      <rect>
-      <x>315</x>
-      <y>454</y>
-      <width>321</width>
-      <height>32</height>
+      <x>40</x>
+      <y>280</y>
+      <width>241</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -1631,8 +1631,8 @@
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>460</y>
-      <width>113</width>
+      <y>464</y>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
@@ -1641,7 +1641,7 @@
     <property name="geometry">
      <rect>
       <x>678</x>
-      <y>460</y>
+      <y>464</y>
       <width>121</width>
       <height>20</height>
      </rect>
@@ -1650,6 +1650,139 @@
      <string>Nombre del archivo:</string>
     </property>
    </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>460</y>
+      <width>351</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_19">
+     <item row="3" column="0" colspan="3">
+      <widget class="QPushButton" name="espectrograma_track">
+       <property name="text">
+        <string>Espectrograma de tracks seleccionados</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="QComboBox" name="ventana_espectrograma">
+       <item>
+        <property name="text">
+         <string>boxcar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>triang</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>blackman</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>hamming</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>hann</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>bartlett</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>flattop</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>parzen</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>bohman</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>blackmanharris</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>nuttall</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>barthann</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>Ventana</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_24">
+       <property name="text">
+        <string>Tamaño de ventana (samples)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_25">
+       <property name="text">
+        <string>Overlaping (max 50%)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="window_size"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="overlaping"/>
+     </item>
+    </layout>
+    <zorder>ventana_espectrograma</zorder>
+    <zorder>espectrograma_track</zorder>
+    <zorder>label_24</zorder>
+    <zorder>label_25</zorder>
+    <zorder>window_size</zorder>
+    <zorder>overlaping</zorder>
+    <zorder>label_23</zorder>
+   </widget>
+   <zorder>Selector</zorder>
+   <zorder>cargar_archivo</zorder>
+   <zorder>Reproductor</zorder>
+   <zorder>espectrograma</zorder>
+   <zorder>guardar_archivo</zorder>
+   <zorder>Reproducir_todo</zorder>
+   <zorder>save_name</zorder>
+   <zorder>label_22</zorder>
+   <zorder>frame</zorder>
+   <zorder>scrollArea</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

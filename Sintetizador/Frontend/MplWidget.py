@@ -10,6 +10,9 @@ from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as Navigatio
 
 from webcolors import *
 
+from scipy import signal as sign
+import numpy as np
+
 
 class MplWidget(QWidget):
     def __init__(self, parent=None):
@@ -37,8 +40,6 @@ class MplWidget(QWidget):
 
     def plot(self, initial_signal, signal, key):
 
-
-
         self.canvas.axes.clear()
         if key == 'time':
             self.canvas.axes.set_title('Time Domain')
@@ -46,14 +47,28 @@ class MplWidget(QWidget):
             self.canvas.axes.set_ylabel('Amplitude (V)')
             self.canvas.axes.plot(signal.get_time_data()[0], signal.get_time_data()[1])
             self.canvas.draw()
-        else:
-            self.canvas.axes.set_title('Frequency Domain')
-            self.canvas.axes.set_xlabel('Frequency (kHz)')
-            self.canvas.axes.set_ylabel('Amplitude (V)')
-            self.canvas.axes.set_xlim(0, 50 * initial_signal.freq)
 
-            self.canvas.axes.plot(signal.get_frequency_data()[0], signal.get_frequency_data()[1])
-            self.canvas.draw()
+    def plot_spectrogram(self, signal, sample_rate, window, n_per_seg, overlaping):
+
+
+        print('dibuje')
+
+        
+        self.canvas.axes.clear()
+
+        print('spetcrogramam')
+
+        f, t, Sxx = sign.spectrogram(signal, fs=sample_rate, window=window, nperseg=int(n_per_seg),
+                                     noverlap=int(n_per_seg * overlaping / 100))
+
+        self.canvas.axes.pcolormesh(t, f, 10 * np.log10(Sxx))
+
+        self.canvas.axes.set_xlabel('Time [sec]')
+        self.canvas.axes.set_ylabel('Frequency [Hz]')
+        self.canvas.axes.plot(np.arange(0, len(signal) / sample_rate, 1/sample_rate), signal)
+        
+        self.canvas.draw()
+
 
 
 
