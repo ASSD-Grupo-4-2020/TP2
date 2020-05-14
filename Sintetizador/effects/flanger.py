@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def gen_delay(data, delay):
     out = data.copy()
     for i in range(len(data)):

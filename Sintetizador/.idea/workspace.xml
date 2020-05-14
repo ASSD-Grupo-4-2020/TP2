@@ -20,7 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b387a286-79e5-4cbc-8253-e73509585292" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Sintesis_muestras/muestras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Sintetizador.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sintetizador.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/MplWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/MplWidget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/mainwindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/tester.mid" beforeDir="false" afterPath="$PROJECT_DIR$/Midis/tester.mid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/effects/flanger.py" beforeDir="false" afterPath="$PROJECT_DIR$/effects/flanger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +63,38 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Sintesis_muestras" />
       <recent name="$PROJECT_DIR$/Midis" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Sampled_ADSR/Wavs" />
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
-      <recent name="$PROJECT_DIR$/Frontend" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Additive_Synthesis/Instruments" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="Espectro" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sintetizador" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Espectrograma" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Espectrograma/Espectro.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Instruments" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Sintetizador" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,27 +150,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Frontend/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="read_midi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Sintetizador" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/miditodata" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/miditodata/read_midi.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,19 +223,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Instruments" />
-      <item itemvalue="Python.read_midi" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.tes" />
       <item itemvalue="Python.Working_Classes" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.Espectro" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.Espectro" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.Working_Classes" />
         <item itemvalue="Python.tes" />
-        <item itemvalue="Python.read_midi" />
       </list>
     </recent_temporary>
   </component>
@@ -280,35 +289,35 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="703" height="466" key="DebuggerActiveHint/0.23.1920.1057@0.23.1920.1057" timestamp="1589322624705" />
-    <state width="1522" height="184" key="GridCell.Tab.0.bottom" timestamp="1589473707586">
+    <state width="1522" height="184" key="GridCell.Tab.0.bottom" timestamp="1589482312844">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784675" />
-    <state width="1522" height="184" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589473707586" />
+    <state width="1522" height="184" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589482312844" />
     <state width="1522" height="223" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.bottom/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
     <state width="1522" height="173" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
-    <state width="1522" height="184" key="GridCell.Tab.0.center" timestamp="1589473707585">
+    <state width="1522" height="184" key="GridCell.Tab.0.center" timestamp="1589482312844">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784673" />
-    <state width="1522" height="184" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589473707585" />
+    <state width="1522" height="184" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589482312844" />
     <state width="1522" height="223" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.center/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
     <state width="1522" height="173" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />
-    <state width="1522" height="184" key="GridCell.Tab.0.left" timestamp="1589473707585">
+    <state width="1522" height="184" key="GridCell.Tab.0.left" timestamp="1589482312843">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784673" />
-    <state width="1522" height="184" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589473707585" />
+    <state width="1522" height="184" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589482312843" />
     <state width="1522" height="223" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.left/0.23.1920.978@0.23.1920.978" timestamp="1589044440850" />
     <state width="1522" height="173" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1589045635689" />
-    <state width="1522" height="184" key="GridCell.Tab.0.right" timestamp="1589473707585">
+    <state width="1522" height="184" key="GridCell.Tab.0.right" timestamp="1589482312844">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1059" height="261" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1589173784674" />
-    <state width="1522" height="184" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589473707585" />
+    <state width="1522" height="184" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589482312844" />
     <state width="1522" height="223" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1589056547565" />
     <state width="1522" height="420" key="GridCell.Tab.0.right/0.23.1920.978@0.23.1920.978" timestamp="1589044440851" />
     <state width="1522" height="173" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1589045635690" />

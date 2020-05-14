@@ -88,7 +88,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.ui.guardar_archivo.clicked.connect(self.save_file)
 
-
+        self.ui.espectrograma_track.clicked.connect(self.plot_spectrogram)
         ###   Callbacks   ###
 
     # Carga el archivo midi a player
@@ -116,7 +116,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ids = []
         for track in self.player.tracks:
-            if  track.reproductor:
+            if track.reproductor:
                 ids.append(track.iden)
 
         output_song = self.player.make_song(ids)
@@ -129,8 +129,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
         print(final_path)
         write_timeline_to_wav(final_path, output_song, self.player.sample_rate)
-
-
 
     def change_synth(self):
         current_text = self.ui.synthesis_selector.currentText()
@@ -185,6 +183,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 ui.repaint()
 
                 break
+        self.plot_timelines()
 
     def remove_track(self, iden):
         for ui in self.ui.scrollAreaWidgetContents.children():
@@ -232,11 +231,33 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # plots track timelines
     def plot_timelines(self):
+        #self.ui.tracktimeline1.plot_timebase(self.player.tracks[0].sounds, self.player.sample_rate)
+
+        #self.ui.tracktimeline1.repaint()
         pass
+
+
+
+
 
     # Pots spectrogram
     def plot_spectrogram(self):
-        pass
+        iden_list = []
+        for i in range(1, 17):
+            if eval('self.ui.track' + str(i) + '_checkbox.isChecked()'):
+                iden_list.append(i)
+
+        if not len(iden_list):
+            self.show_pop_up('Debe Seleccionar al menos un track para realizar el espectrograma')
+
+        output_song = self.player.make_song(iden_list)
+
+        window = self.ui.ventana_espectrograma.currentText()
+        n_per_seg = int(self.ui.window_size.text())
+        overlaping = int(self.ui.overlaping.text())
+
+        self.ui.espectrograma.plot_spectrogram(output_song, self.player.sample_rate, window, n_per_seg, overlaping)
+        self.ui.espectrograma.repaint()
 
     def reset_tracks(self):
         for ui in self.ui.scrollAreaWidgetContents.children():

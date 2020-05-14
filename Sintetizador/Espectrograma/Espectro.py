@@ -3,9 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
-def Spectrograma(signal,Fs,windows,n_per_seg, overlaping):
+def Spectrograma(signal, Fs, windows, n_per_seg, overlaping):
   #Realizo un control de que se utilisen solo las ventanas permitidas si es string
+
+  """
   if (isinstance(windows,str)):
     if windows != "boxcar":
       if windows != "triang":
@@ -21,7 +22,9 @@ def Spectrograma(signal,Fs,windows,n_per_seg, overlaping):
                           if windows != "barthann":
                             windows = "triang"
                             print("No eligio predeterminada")
-  f, t, Sxx = sign.spectrogram(signal,fs=Fs,window=windows,nperseg=int(n_per_seg),noverlap=int(n_per_seg*overlaping/100))
+  """
+  f, t, Sxx = sign.spectrogram(signal, fs=Fs, window=windows, nperseg=int(n_per_seg), noverlap=int(n_per_seg * overlaping / 100))
+
   plt.pcolormesh(t, f, 10*np.log10(Sxx))
   plt.ylabel('Frequency [Hz]')
   plt.xlabel('Time [sec]')
@@ -39,7 +42,7 @@ def main():
 #   plt.ylabel('Frequency [Hz]')
 #   plt.xlabel('Time [sec]')
 #   plt.show()
-  Spectrograma(x,fs,"hann",2*500,50)
+  Spectrograma(x, fs, "hann", 2*500, 50)
   # Con n_per_seg=500 busque una resolución de 500/fs segundos en el tiempo
 
 if __name__ == "__main__":
