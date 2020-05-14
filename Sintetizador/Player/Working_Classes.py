@@ -29,8 +29,13 @@ class Player:
         self.tracks = []
 
     def create_tracks(self):
+        tempo = 0
+        for msg in self.mid.tracks[0]:
+            if msg.dict()['type'] == 'set_tempo':
+                tempo = msg.dict()['tempo']
+
         for k in range(1, len(self.mid.tracks)):
-            new_track = MyTrack(self.sample_rate, self.mid.length, k)
+            new_track = MyTrack(self.sample_rate, self.mid.length, k, tempo)
             new_track.parse_track(self.mid.tracks[k])
             self.tracks.append(new_track)
 
@@ -40,7 +45,7 @@ class Player:
                 track.create_timebase()
                 track.create_sounds()
                 track.set_instrument(instrument)
-
+                nota = 1
                 for note in track.notes:
 
                     length = note.get_len_seconds(self.mid.ticks_per_beat, track.tempo)
@@ -59,6 +64,8 @@ class Player:
 
                     # sintetizo nota
                     sample = synthesize(self.sample_rate, pitch, length, form, instrument, noise)
+                    print('nota creada:  %s' % nota)
+                    nota += 1
 
                     # Ahora debo sumar en el arreglo y, desde index hasta el final de mi nota
                     synth_note_index = 0
@@ -89,16 +96,65 @@ class Player:
 
         stream.write(sounds.astype(np.float32).tostring())
         stream.close()
+        print('finished')
+
+    def play_multiple_tracks(self, iden_list):
+        max_length = 0
+
+        for track in self.tracks:
+            if len(track.sounds) > max_length:
+                max_length = len(track.sounds)
+
+        sounds = np.zeros(max_length)
+
+        for element in iden_list:
+            copy = np.copy(self.tracks[element - 1].sounds)
+            diff = max_length - len(copy)
+
+            ceros = np.zeros(diff)
+            sumar = np.append(copy, ceros)
+
+            sounds += sumar
+
+        p = pyaudio.PyAudio()
+
+        stream = p.open(format=pyaudio.paFloat32,
+                        channels=1,
+                        rate=self.sample_rate,
+                        frames_per_buffer=1024,
+                        output=True,
+                        output_device_index=1
+                        )
+
+        stream.write(sounds.astype(np.float32).tostring())
+        stream.close()
+
+    def play_single_note(self, pitch, length, form, instrument, noise='normal'):
+
+        sample = synthesize(self.sample_rate, pitch, length, form, instrument, noise)
+
+        p = pyaudio.PyAudio()
+
+        stream = p.open(format=pyaudio.paFloat32,
+                        channels=1,
+                        rate=self.sample_rate,
+                        frames_per_buffer=1024,
+                        output=True,
+                        output_device_index=1
+                        )
+
+        stream.write(sample.astype(np.float32).tostring())
+        stream.close()
 
 
 class MyTrack:
-    def __init__(self, sample_rate, length, iden):
+    def __init__(self, sample_rate, length, iden, tempo):
         self.notes = []
         self.sample_rate = sample_rate
         self.length = length
         self.timebase = None
         self.sounds = None
-        self.tempo = 461538
+        self.tempo = tempo
         self.iden = iden
         self.reproductor = None
         self.instrument = None
@@ -115,6 +171,10 @@ class MyTrack:
                     t_f = current_time_in_ticks + find_note_off(msg.note, track[msg_num:len(track) + 1])
                     pitch = midi_to_freq(msg.note)
 
+                    #if pitch > 1000:
+                    #    var = freq2midi(pitch)
+                    #    var2 = convert_4oct(var)
+                    #    pitch = midi_to_freq(var2)
 
                     new_note = Mynote(self.sample_rate, pitch, current_time_in_ticks, t_f, amp)
                     self.notes.append(new_note)
@@ -176,8 +236,14 @@ class Mynote:
 #player.load_file('/Users/agustin/Documents/GitHub/TP2/Sintetizador/Midis/Lalaland.mid')
 #player.create_tracks()
 #print('creadas')
+
+#player.synthesize_track(2, 'physical', 'guitar')
+#print('sintetizada 1')
+
 #player.synthesize_track(1, 'physical', 'guitar')
-#player.play_track(1)
+#print('sintetizada 2')
+
+#player.play_multiple_tracks([1, 2])
 
 
 ###### Pruebas de Victor ########

@@ -39,7 +39,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-2577</y>
+       <y>-500</y>
        <width>754</width>
        <height>3464</height>
       </rect>
@@ -102,7 +102,7 @@
              </widget>
             </item>
             <item row="3" column="0">
-             <widget class="QPushButton" name="eliminar_track1">
+             <widget class="QPushButton" name="Eliminar_track1">
               <property name="text">
                <string>Eliminar track</string>
               </property>
@@ -335,7 +335,7 @@
              </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QCheckBox" name="track_checkbox_4">
+             <widget class="QCheckBox" name="track4_checkbox">
               <property name="text">
                <string>Seleccionar Track</string>
               </property>
@@ -1142,7 +1142,7 @@
              </widget>
             </item>
             <item row="3" column="0">
-             <widget class="QPushButton" name="eliminar_track14">
+             <widget class="QPushButton" name="Eliminar_track14">
               <property name="text">
                <string>Eliminar track</string>
               </property>
@@ -1459,7 +1459,7 @@
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="1" column="2">
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="duration_lineedit">
        <property name="text">
         <string/>
        </property>
@@ -1473,31 +1473,31 @@
       </widget>
      </item>
      <item row="3" column="2">
-      <widget class="QComboBox" name="comboBox_3">
+      <widget class="QComboBox" name="instrument_selector_single_note">
        <item>
         <property name="text">
-         <string>Piano</string>
+         <string>piano</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Flauta</string>
+         <string>flute</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Violin</string>
+         <string>violin</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Trompeta</string>
+         <string>trumpet</string>
         </property>
        </item>
       </widget>
      </item>
      <item row="0" column="2">
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QComboBox" name="single_note_selector">
        <item>
         <property name="text">
          <string>Do</string>
@@ -1536,7 +1536,7 @@
       </widget>
      </item>
      <item row="2" column="2">
-      <widget class="QComboBox" name="comboBox_2">
+      <widget class="QComboBox" name="synth_selector_single_note">
        <item>
         <property name="text">
          <string>Sintesis aditiva</string>
@@ -1555,7 +1555,7 @@
       </widget>
      </item>
      <item row="0" column="3">
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="reproduce_single_note">
        <property name="text">
         <string>Reproducir</string>
        </property>
@@ -1614,7 +1614,7 @@
      <string>Guardar archivo</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="Reproducir_todo">
     <property name="geometry">
      <rect>
       <x>315</x>

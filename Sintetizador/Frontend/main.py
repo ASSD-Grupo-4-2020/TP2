@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QFileDialog, QFrame
+from PyQt5.QtWidgets import QFileDialog, QFrame, QMessageBox
 
 from Frontend.MainWindow import Ui_MainWindow
 from Frontend.MplWidget import MplWidget
@@ -36,6 +36,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         #Este es el reporductor, aca tengo todos los tracks, el archivo midi y lo necesario para sintetizar
         self.player = Player(11025)
+        self.note_player = Player(11025)
 
 
         ###   Callbacks   ###
@@ -57,7 +58,27 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.Reproducir_track15.clicked.connect(lambda: self.play_track(15))
         self.ui.Reproducir_track16.clicked.connect(lambda: self.play_track(16))
 
+        self.ui.Eliminar_track1.clicked.connect(lambda: self.remove_track(1))
+        self.ui.Eliminar_track2.clicked.connect(lambda: self.remove_track(2))
+        self.ui.Eliminar_track3.clicked.connect(lambda: self.remove_track(3))
+        self.ui.Eliminar_track4.clicked.connect(lambda: self.remove_track(4))
+        self.ui.Eliminar_track5.clicked.connect(lambda: self.remove_track(5))
+        self.ui.Eliminar_track6.clicked.connect(lambda: self.remove_track(6))
+        self.ui.Eliminar_track7.clicked.connect(lambda: self.remove_track(7))
+        self.ui.Eliminar_track8.clicked.connect(lambda: self.remove_track(8))
+        self.ui.Eliminar_track9.clicked.connect(lambda: self.remove_track(9))
+        self.ui.Eliminar_track10.clicked.connect(lambda: self.remove_track(10))
+        self.ui.Eliminar_track11.clicked.connect(lambda: self.remove_track(11))
+        self.ui.Eliminar_track12.clicked.connect(lambda: self.remove_track(12))
+        self.ui.Eliminar_track13.clicked.connect(lambda: self.remove_track(13))
+        self.ui.Eliminar_track14.clicked.connect(lambda: self.remove_track(14))
+        self.ui.Eliminar_track15.clicked.connect(lambda: self.remove_track(15))
+        self.ui.Eliminar_track16.clicked.connect(lambda: self.remove_track(16))
 
+        self.ui.Reproducir_todo.clicked.connect(self.play_song)
+
+        self.ui.reproduce_single_note.clicked.connect(self.play_single_note)
+        self.ui.synth_selector_single_note.currentIndexChanged.connect(self.change_single_note_synth)
 
         self.ui.cargar_archivo.clicked.connect(self.load_mid)
         self.ui.synthesis_selector.currentIndexChanged.connect(self.change_synth)
@@ -98,6 +119,17 @@ class MainWindow(QtWidgets.QMainWindow):
         elif current_text == 'Sintesis basada en muestras':
             pass
 
+    def change_single_note_synth(self):
+        current_text = self.ui.synth_selector_single_note.currentText()
+        if current_text == 'Sintesis aditiva':
+            self.ui.instrument_selector_single_note.clear()
+            self.ui.instrument_selector_single_note.addItems(['flute', 'piano', 'violin', 'trumpet'])
+        elif current_text == 'Sintesis física':
+            self.ui.instrument_selector_single_note.clear()
+            self.ui.instrument_selector_single_note.addItems(['guitar', 'drums'])
+        elif current_text == 'Sintesis basada en muestras':
+            pass
+
     def add_track(self):
         reproductor  = 0
         for ui in self.ui.scrollAreaWidgetContents.children():
@@ -126,10 +158,16 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 self.player.synthesize_track(ind, current_form, current_instrument)
                 print('sintetizo')
-
-                self.player.play_track(ind)
+                print()
 
                 break
+
+    def remove_track(self, iden):
+        for ui in self.ui.scrollAreaWidgetContents.children():
+            ui.setEnabled(False)
+
+        self.player.tracks[iden - 1].set_reproductor = None
+        self.player.tracks[iden - 1].set_instrument = None
 
 
     # plays desired track
@@ -138,7 +176,34 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # plays all the tracks at the same time
     def play_song(self):
-        pass
+        iden_list = []
+        for i in range(1, 17):
+            if eval('self.ui.track' + str(i) + '_checkbox.isChecked()'):
+                iden_list.append(i)
+
+        self.player.play_multiple_tracks(iden_list)
+
+    def play_single_note(self):
+        notes = {'Do': 261, 'Re': 293, 'Mi': 329, 'Fa': 349, 'Sol': 392, 'La': 440, 'Si': 493}
+
+        pitch = notes[self.ui.single_note_selector.currentText()]
+
+        length = int(self.ui.duration_lineedit.text())
+
+        if length > 15:
+            self.show_pop_up('Porque querrías escuchar la misma nota por tanto tiempo?')
+
+        current_form = self.ui.synth_selector_single_note.currentText()
+        if current_form == 'Sintesis aditiva':
+            current_form = 'additive'
+        elif current_form == 'Sintesis física':
+            current_form = 'physical'
+        elif current_form == 'Sintesis basada en muestras':
+            pass
+
+        instrument = self.ui.instrument_selector_single_note.currentText()
+
+        self.note_player.play_single_note(pitch, length, current_form, instrument)
 
     # plots track timelines
     def plot_timelines(self):
@@ -148,6 +213,21 @@ class MainWindow(QtWidgets.QMainWindow):
     def plot_spectrogram(self):
         pass
 
+    def reset_tracks(self):
+        for ui in self.ui.scrollAreaWidgetContents.children():
+            ui.setEnabled(False)
+
+        for track in self.player.tracks:
+            track.set_reproductor = None
+            track.set_instrument = None
+
+    def show_pop_up(self, error):
+        msg = QMessageBox()
+        msg.setWindowTitle('Mistakes were made')
+        msg.setText(error)
+        msg.setIcon(QMessageBox.Warning)
+
+        x = msg.exec_()
 
 
 # Controlador de ventanas, conecta señales que le dicen a las distintas ventanas cuando abrirse y cerrarse
