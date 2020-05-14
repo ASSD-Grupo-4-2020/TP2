@@ -99,6 +99,22 @@ class Player:
         print('finished')
 
     def play_multiple_tracks(self, iden_list):
+        sounds = self.make_song(iden_list)
+
+        p = pyaudio.PyAudio()
+
+        stream = p.open(format=pyaudio.paFloat32,
+                        channels=1,
+                        rate=self.sample_rate,
+                        frames_per_buffer=1024,
+                        output=True,
+                        output_device_index=1
+                        )
+
+        stream.write(sounds.astype(np.float32).tostring())
+        stream.close()
+
+    def make_song(self, iden_list):
         max_length = 0
 
         for track in self.tracks:
@@ -116,18 +132,7 @@ class Player:
 
             sounds += sumar
 
-        p = pyaudio.PyAudio()
-
-        stream = p.open(format=pyaudio.paFloat32,
-                        channels=1,
-                        rate=self.sample_rate,
-                        frames_per_buffer=1024,
-                        output=True,
-                        output_device_index=1
-                        )
-
-        stream.write(sounds.astype(np.float32).tostring())
-        stream.close()
+        return sounds
 
     def play_single_note(self, pitch, length, form, instrument, noise='normal'):
 
@@ -229,6 +234,11 @@ class Mynote:
             sample = self.sound[time-self.t_i]
 
         return sample
+
+
+
+
+
 
 #### Prueba de funcionamiento
 

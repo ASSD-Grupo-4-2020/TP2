@@ -17,6 +17,7 @@ piano_sample_rate, piano_data = wavfile.read('/Users/agustin/Documents/GitHub/TP
 class Instrument:
     def __init__(self, instrumnet):
         self.instrument = instrumnet
+        self.adsr = None
 
         if self.instrument == 'violin':
             self.sample_rate = violin_sample_rate
@@ -118,6 +119,7 @@ class Instrument:
         output = sum(empty)
 
         adsr = ifft(output)
+        self.adsr = adsr
 
         maxi = np.amax(adsr)
         normalized = adsr / maxi
@@ -145,6 +147,7 @@ class Instrument:
 
         out = extend(fundamental, time, duration, self.sample_rate, self.instrument)
 
+
         return out
 
     def calculate_partial_shares(self):
@@ -155,12 +158,18 @@ class Instrument:
         plt.plot(fftfreq(self.data.shape[0], 1 / self.sample_rate), abs(fft(self.data)))
         plt.show()
 
+    def plot_adsr(self):
+        time = np.arange(0, self.data.shape[0] / self.sample_rate, 1/self.sample_rate)
+        plt.plot(time, self.adsr)
+        plt.show()
 
-#instrumneto = Instrument('violin')
+
+#instrumneto = Instrument('piano')
 #instrumneto.fft_data()
 
-#c4 = instrumneto.get_sound(261, 2)
-
+#print(instrumneto.instrument)
+#c4 = instrumneto.get_sound(261, 4)
+#instrumneto.plot_adsr()
 
 #path = '/Users/agustin/Desktop/c4.wav'
 

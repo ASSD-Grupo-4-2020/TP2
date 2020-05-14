@@ -20,38 +20,67 @@ def shift2(arr, num):
 
 
 def extend(sound, time, sustain_duration, sample_rate, instrument):
-
     sustain_timepoints = math.ceil(sustain_duration * sample_rate)
 
-    attack_index = find_nearest(time, 0.7)
-    chopped_attack = sound[:attack_index]
+    if instrument == 'violin' or instrument == 'flute' or instrument == 'trumpet':
 
 
-    release_index = find_nearest(time, 2.75)
-    chopped_release = sound[release_index:]
-
-    #Genero el sustain a partir del sustain original
-
-    chopped_sustain = sound[attack_index: release_index - 1]
-    chopped_sustain_timepoints = len(chopped_sustain)
-
-    chopped_sustain_duration = chopped_sustain_timepoints / sample_rate
+        attack_index = find_nearest(time, 0.7)
+        chopped_attack = sound[:attack_index]
 
 
-    if sustain_duration > chopped_sustain_duration:
-        diff = sustain_timepoints - chopped_sustain_timepoints
+        release_index = find_nearest(time, 2.75)
+        chopped_release = sound[release_index:]
 
-        chunk = chopped_sustain[:diff + 1]
+        #Genero el sustain a partir del sustain original
 
-        chopped_sustain = np.concatenate((chopped_sustain, chunk))
+        chopped_sustain = sound[attack_index: release_index - 1]
+        chopped_sustain_timepoints = len(chopped_sustain)
 
-    elif sustain_duration < chopped_sustain_duration:
-        cutoff = math.ceil(sustain_duration * sample_rate)
+        chopped_sustain_duration = chopped_sustain_timepoints / sample_rate
 
-        chopped_sustain = chopped_sustain[:cutoff]
-        #print(len(chopped_sustain))
 
-    total = np.concatenate((chopped_attack, chopped_sustain, chopped_release))
+        if sustain_duration > chopped_sustain_duration:
+            diff = sustain_timepoints - chopped_sustain_timepoints
+
+            chunk = chopped_sustain[:diff + 1]
+
+            chopped_sustain = np.concatenate((chopped_sustain, chunk))
+
+        elif sustain_duration < chopped_sustain_duration:
+            cutoff = math.ceil(sustain_duration * sample_rate)
+
+            chopped_sustain = chopped_sustain[:cutoff]
+            #print(len(chopped_sustain))
+
+        total = np.concatenate((chopped_attack, chopped_sustain, chopped_release))
+    elif instrument == 'piano':
+        attack_and_decay_index = find_nearest(time, 0.4)
+        chopped_attack_and_decay = sound[:attack_and_decay_index]
+
+        release_index = find_nearest(time, 2.35)
+        chopped_release = sound[release_index:]
+
+        chopped_sustain = sound[attack_and_decay_index: release_index - 1]
+        chopped_sustain_timepoints = len(chopped_sustain)
+
+        chopped_sustain_duration = chopped_sustain_timepoints / sample_rate
+
+        if sustain_duration > chopped_sustain_duration:
+            diff = sustain_timepoints - chopped_sustain_timepoints
+
+            chunk = 0.03 * chopped_sustain[-(diff + 1):]
+
+            chopped_sustain = np.concatenate((chopped_sustain, chunk))
+
+        elif sustain_duration < chopped_sustain_duration:
+            cutoff = math.ceil(sustain_duration * sample_rate)
+
+            chopped_sustain = chopped_sustain[:cutoff]
+
+        total = np.concatenate((chopped_attack_and_decay, chopped_sustain, chopped_release))
+
+
 
     return total
 

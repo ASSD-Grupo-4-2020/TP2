@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QFileDialog, QFrame, QMessageBox
 from Frontend.MainWindow import Ui_MainWindow
 from Frontend.MplWidget import MplWidget
 
+from nptowav.numpy_to_wav import write_timeline_to_wav
+
 from Player.Working_Classes import Player
 
 import sys
@@ -83,8 +85,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.cargar_archivo.clicked.connect(self.load_mid)
         self.ui.synthesis_selector.currentIndexChanged.connect(self.change_synth)
         self.ui.add_track.clicked.connect(self.add_track)
-        #self.ui.pushButton.clicked.connect(self.add_track)
-        #self.ui.pushButton_2.clicked.connect(self.remove_track)
+
+        self.ui.guardar_archivo.clicked.connect(self.save_file)
 
 
         ###   Callbacks   ###
@@ -107,6 +109,25 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.track_selector.clear()
             for track in self.player.tracks:
                 self.ui.track_selector.addItem('Track %s' % track.iden)
+
+    def save_file(self):
+        path = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
+        print(path)
+
+        ids = []
+        for track in self.player.tracks:
+            if not track.reproductor:
+                ids.append(track.iden)
+
+        output_song = self.player.make_song(ids)
+
+        name = 'pista.wav'
+
+        final_path = path + '/' + name
+
+        write_timeline_to_wav(final_path, output_song, self.player.sample_rate)
+
+
 
     def change_synth(self):
         current_text = self.ui.synthesis_selector.currentText()
@@ -158,7 +179,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 self.player.synthesize_track(ind, current_form, current_instrument)
                 print('sintetizo')
-                print()
+                ui.repaint()
 
                 break
 
@@ -168,6 +189,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.player.tracks[iden - 1].set_reproductor = None
         self.player.tracks[iden - 1].set_instrument = None
+        self.ui.scrollAreaWidgetContents.update()
 
 
     # plays desired track

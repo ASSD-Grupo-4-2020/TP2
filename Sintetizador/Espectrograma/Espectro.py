@@ -2,6 +2,8 @@ from scipy import signal as sign
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
 def Spectrograma(signal,Fs,windows,n_per_seg, overlaping):
   #Realizo un control de que se utilisen solo las ventanas permitidas si es string
   if (isinstance(windows,str)):

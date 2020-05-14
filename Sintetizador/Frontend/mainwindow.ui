@@ -1437,7 +1437,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>141</width>
+      <width>301</width>
       <height>51</height>
      </rect>
     </property>
@@ -1450,7 +1450,7 @@
      <rect>
       <x>320</x>
       <y>490</y>
-      <width>761</width>
+      <width>771</width>
       <height>141</height>
      </rect>
     </property>
@@ -1604,14 +1604,14 @@
    <widget class="QPushButton" name="guardar_archivo">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>10</y>
+      <x>938</x>
+      <y>455</y>
       <width>141</width>
-      <height>51</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Guardar archivo</string>
+     <string>Guardar pista</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Reproducir_todo">
