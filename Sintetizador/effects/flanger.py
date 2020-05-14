@@ -32,8 +32,8 @@ def flange2(data, speed, depth, inv, fs, min_delay = 1, max_delay = 10):
         """
     speed = (1-0.1)*speed/100 + 0.1
     out = data.copy()
-    Mo = min_delay/1000 * fs
-    Mw = (max_delay-min_delay)/1000 * fs
+    if min_delay >= 1: Mo = min_delay/1000 * fs
+    if max_delay <= 10: Mw = (max_delay-min_delay)/1000 * fs
     if inv: depth *= -1
     for i in range(len(data)):
         M = Mo + Mw/2 * (1 + np.sin(2*np.pi* speed/fs * i))
@@ -53,8 +53,8 @@ def chorus(data, speed, depth, inv, fs, min_delay = 20, max_delay = 30):
         """
     speed = (3-0.1)*speed/100 + 0.1
     out = data.copy()
-    Mo = min_delay/1000 * fs
-    Mw = (max_delay-min_delay)/1000 * fs
+    if min_delay >= 20: Mo = min_delay/1000 * fs
+    if max_delay <= 30: Mw = (max_delay-min_delay)/1000 * fs
     if inv: depth *= -1
     for i in range(len(data)):
         M = Mo + Mw/2 * (1 + np.sin(2*np.pi* speed/fs * i))
