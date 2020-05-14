@@ -183,6 +183,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 ui.repaint()
 
                 break
+        self.plot_timelines()
 
     def remove_track(self, iden):
         for ui in self.ui.scrollAreaWidgetContents.children():
@@ -230,7 +231,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # plots track timelines
     def plot_timelines(self):
+        #self.ui.tracktimeline1.plot_timebase(self.player.tracks[0].sounds, self.player.sample_rate)
+
+        #self.ui.tracktimeline1.repaint()
         pass
+
+
+
+
 
     # Pots spectrogram
     def plot_spectrogram(self):

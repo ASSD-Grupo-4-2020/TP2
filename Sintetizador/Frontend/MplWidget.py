@@ -38,15 +38,14 @@ class MplWidget(QWidget):
         self.canvas.axes.set_facecolor("#e1ddbf")
         self.setLayout(layout)
 
-    def plot(self, initial_signal, signal, key):
+    def plot_timebase(self, signal, sample_rate):
 
         self.canvas.axes.clear()
-        if key == 'time':
-            self.canvas.axes.set_title('Time Domain')
-            self.canvas.axes.set_xlabel('Time (ms)')
-            self.canvas.axes.set_ylabel('Amplitude (V)')
-            self.canvas.axes.plot(signal.get_time_data()[0], signal.get_time_data()[1])
-            self.canvas.draw()
+
+        self.canvas.axes.set_xlabel('Time [s]')
+        self.canvas.axes.set_ylabel('Amplitude')
+        self.canvas.axes.plot(np.arange(0, len(signal) / sample_rate, 1/sample_rate), signal)
+        self.canvas.draw()
 
     def plot_spectrogram(self, signal, sample_rate, window, n_per_seg, overlaping):
 
