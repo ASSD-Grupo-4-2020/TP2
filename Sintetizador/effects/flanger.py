@@ -23,10 +23,12 @@ def flange(data, lfofreq, depth, phase_inv, M0=1, A=1):
 
 def flange2(data, speed, depth, inv, fs, min_delay = 1, max_delay = 10):
     """ Data: Input Signal
-        Speed %: f_LFO [0.1,10] Hz
+        Speed %: f_LFO [0.1,10] Hz => Speed [0,100]
         depth: g [0,1]
-        Delay: Minimum delay (minimum 0.001)
-        inv: invertion mode"""
+        inv: invertion mode
+        min_delay = 01 ms
+        max_delay = 10 ms
+        """
     speed = (1-0.1)*speed/100 + 0.1
     out = data.copy()
     Mo = min_delay/1000 * fs
@@ -42,10 +44,12 @@ def flange2(data, speed, depth, inv, fs, min_delay = 1, max_delay = 10):
 
 def chorus(data, speed, depth, inv, fs, min_delay = 20, max_delay = 30):
     """ Data: Input Signal
-        Speed %: f_LFO [0.1,10] Hz
+        Speed %: f_LFO [0.1,3] Hz => Speed [0,100]
         depth: g [0,1]
-        Delay: Minimum delay (minimum 0.001)
-        inv: invertion mode"""
+        inv: invertion mode on/off
+        min_delay = 20 ms
+        max_delay = 30 ms
+        """
     speed = (3-0.1)*speed/100 + 0.1
     out = data.copy()
     Mo = min_delay/1000 * fs
