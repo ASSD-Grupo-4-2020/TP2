@@ -116,15 +116,18 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ids = []
         for track in self.player.tracks:
-            if not track.reproductor:
+            if  track.reproductor:
                 ids.append(track.iden)
 
         output_song = self.player.make_song(ids)
+        print(ids)
 
-        name = 'pista.wav'
+        name = self.ui.save_name.text()
+        name += '.wav'
 
         final_path = path + '/' + name
 
+        print(final_path)
         write_timeline_to_wav(final_path, output_song, self.player.sample_rate)
 
 

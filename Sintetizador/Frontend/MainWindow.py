@@ -657,6 +657,12 @@ class Ui_MainWindow(object):
         self.Reproducir_todo = QtWidgets.QPushButton(self.centralwidget)
         self.Reproducir_todo.setGeometry(QtCore.QRect(315, 454, 321, 32))
         self.Reproducir_todo.setObjectName("Reproducir_todo")
+        self.save_name = QtWidgets.QLineEdit(self.centralwidget)
+        self.save_name.setGeometry(QtCore.QRect(810, 460, 113, 21))
+        self.save_name.setObjectName("save_name")
+        self.label_22 = QtWidgets.QLabel(self.centralwidget)
+        self.label_22.setGeometry(QtCore.QRect(678, 460, 121, 20))
+        self.label_22.setObjectName("label_22")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1095, 22))
@@ -770,4 +776,5 @@ class Ui_MainWindow(object):
         self.pushButton_8.setText(_translate("MainWindow", "Nueva Nota"))
         self.guardar_archivo.setText(_translate("MainWindow", "Guardar pista"))
         self.Reproducir_todo.setText(_translate("MainWindow", "Reproducir Tracks seleccionados"))
+        self.label_22.setText(_translate("MainWindow", "Nombre del archivo:"))
 from MplWidget import MplWidget
