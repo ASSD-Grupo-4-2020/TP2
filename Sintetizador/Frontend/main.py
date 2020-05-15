@@ -174,7 +174,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 elif current_form == 'Sintesis fisica':
                     current_form = 'physical'
                 elif current_form == 'Sintesis basada en muestras':
-                    pass
+                    current_form = 'samplesynth'
 
                 self.player.tracks[ind - 1].set_reproductor(reproductor)
 
@@ -187,11 +187,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def remove_track(self, iden):
         for ui in self.ui.scrollAreaWidgetContents.children():
-            ui.setEnabled(False)
+            if isinstance(ui, QFrame):
+
+                ui.setEnabled(False)
+                ui.repaint()
 
         self.player.tracks[iden - 1].set_reproductor = None
         self.player.tracks[iden - 1].set_instrument = None
-        self.ui.scrollAreaWidgetContents.update()
+
 
 
     # plays desired track
@@ -212,22 +215,30 @@ class MainWindow(QtWidgets.QMainWindow):
 
         pitch = notes[self.ui.single_note_selector.currentText()]
 
-        length = int(self.ui.duration_lineedit.text())
+        length = self.ui.duration_lineedit.text()
 
-        if length > 15:
-            self.show_pop_up('Porque querrías escuchar la misma nota por tanto tiempo?')
+        try:
 
-        current_form = self.ui.synth_selector_single_note.currentText()
-        if current_form == 'Sintesis aditiva':
-            current_form = 'additive'
-        elif current_form == 'Sintesis física':
-            current_form = 'physical'
-        elif current_form == 'Sintesis basada en muestras':
-            pass
+            if int(length) < 5:
 
-        instrument = self.ui.instrument_selector_single_note.currentText()
+                length = int(length)
+                current_form = self.ui.synth_selector_single_note.currentText()
+                if current_form == 'Sintesis aditiva':
+                    current_form = 'additive'
+                elif current_form == 'Sintesis física':
+                    current_form = 'physical'
+                elif current_form == 'Sintesis por muestras':
+                    current_form = 'samplesynth'
 
-        self.note_player.play_single_note(pitch, length, current_form, instrument)
+                instrument = self.ui.instrument_selector_single_note.currentText()
+                self.note_player.play_single_note(pitch, length, current_form, instrument)
+            else:
+                self.show_pop_up('Porque querrías escuchar la misma nota por tanto tiempo?')
+
+        except (ValueError, TypeError):
+            self.show_pop_up('Ingrese una duracion  válida para la nota')
+
+
 
     # plots track timelines
     def plot_timelines(self):

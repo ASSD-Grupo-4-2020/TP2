@@ -5,16 +5,10 @@ Leo archivos midi y los interpreto
 
 import mido
 import numpy as np
-from audiolazy.lazy_midi import freq2midi
-
-
-from physical_synthesis.ks_guitar import GuitarString
 
 from Additive_Synthesis.instrument_utils import find_nearest
 
-from nptowav.numpy_to_wav import write_timeline_to_wav
-
-from Player.utils import midi_to_freq, find_note_off, synthesize, convert_4oct
+from Player.utils import midi_to_freq, find_note_off, synthesize
 import pyaudio
 
 

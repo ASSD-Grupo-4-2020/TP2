@@ -19,6 +19,7 @@ def karplus_strong_drum(wavetable, n_samples, stretch_factor, probability):
         curr_sample = (curr_sample+1) % wavetable.size  # Avanzo el índice circularmente
     return np.array(samples)
 
+
 class DrumString:
     def __init__(self, pitch, fs, A, T, b, S=1):
         """Initialize Drum String"""
