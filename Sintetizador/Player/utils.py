@@ -3,6 +3,7 @@ Utilidades de MidiReader
 
 """
 from physical_synthesis.ks_guitar import GuitarString
+from physical_synthesis.ks_drum import DrumString
 from Additive_Synthesis.Instruments import Instrument
 from Sintesis_muestras.Sample_synth import Samplesynth
 from audiolazy.lazy_midi import freq2midi, midi2freq
@@ -51,8 +52,10 @@ def synthesize(sample_rate, frequency, length, form, instrument, noise):
         if instrument == 'guitar':
             guitarnote = GuitarString(frequency, sample_rate, 1, length * sample_rate, noise)
             return guitarnote.get_samples()
-        else:
-            pass
+        elif instrument == 'drums':
+            drumnote = DrumString(frequency, sample_rate, 1, length * sample_rate)
+            return drumnote.get_samples()
+
     elif form == 'samplesynth':
         samplesynth = Samplesynth(instrument)
         return samplesynth.get_sound(frequency, length)

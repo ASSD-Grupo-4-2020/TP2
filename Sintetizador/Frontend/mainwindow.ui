@@ -1646,9 +1646,9 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>500</x>
       <y>490</y>
-      <width>341</width>
+      <width>321</width>
       <height>141</height>
      </rect>
     </property>
@@ -1769,9 +1769,9 @@
    <widget class="QFrame" name="panel_efectos">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>320</x>
       <y>450</y>
-      <width>161</width>
+      <width>171</width>
       <height>181</height>
      </rect>
     </property>
@@ -1788,46 +1788,12 @@
      <enum>QFrame::Raised</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout_20">
-     <item row="1" column="0">
-      <widget class="QComboBox" name="comboBox">
-       <item>
-        <property name="text">
-         <string>Flanger</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Otro</string>
-        </property>
-       </item>
-      </widget>
-     </item>
      <item row="2" column="0">
       <widget class="QLabel" name="speed">
        <property name="text">
         <string>Speed (0 - 100)</string>
        </property>
       </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Reproducir</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_28">
-       <property name="text">
-        <string>Depth (0 - 100)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="speed_lineedit"/>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="depth_lineedit"/>
      </item>
      <item row="0" column="0" colspan="2">
       <widget class="QLabel" name="label_26">
@@ -1843,7 +1809,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Efectos a tracks elegidos</string>
+        <string>Efectos Tracks</string>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -1853,6 +1819,54 @@
        </property>
        <property name="wordWrap">
         <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="depth_lineedit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_28">
+       <property name="text">
+        <string>Depth (0 - 1)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="speed_lineedit"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_29">
+       <property name="text">
+        <string>Inversion </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QComboBox" name="select_effect">
+       <item>
+        <property name="text">
+         <string>Flanger</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Chorus</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QPushButton" name="efecto_reproducir">
+       <property name="text">
+        <string>Reproducir</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QCheckBox" name="inversion">
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>

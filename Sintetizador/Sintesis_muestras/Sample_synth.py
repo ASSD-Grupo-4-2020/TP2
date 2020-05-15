@@ -54,7 +54,7 @@ class Samplesynth:
         return out * 0.1
 
 
-
+"""
 instrumneto = Samplesynth('piano')
 
 
@@ -77,3 +77,4 @@ stream = p.open(format=pyaudio.paFloat32,
 stream.write(c4.astype(np.float32).tostring())
 stream.close()
 
+"""
