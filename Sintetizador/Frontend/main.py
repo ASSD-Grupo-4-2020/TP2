@@ -160,10 +160,10 @@ class MainWindow(QtWidgets.QMainWindow):
             pass
 
     def add_track(self):
-        reproductor  = 0
+        reproductor  = -1
         for ui in self.ui.scrollAreaWidgetContents.children():
+            reproductor += 1
             if isinstance(ui, QFrame) and not ui.isEnabled():
-                reproductor += 1
                 # Agrego track al primer reproductor desactivado que encuentro
                 ui.setEnabled(True)
 
@@ -187,23 +187,22 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 self.player.synthesize_track(ind, current_form, current_instrument)
                 print('sintetizo')
+                self.plot_timelines(reproductor, ind)
                 ui.repaint()
-
                 break
-        self.plot_timelines()
+
 
     def remove_track(self, iden):
-        print('hola')
 
         for ui in self.ui.scrollAreaWidgetContents.children():
             if isinstance(ui, QFrame):
-
-                ui.setEnabled(False)
-                ui.repaint()
+                if ui.objectName() == 'trackui' + str(iden):
+                    ui.setEnabled(False)
+                    ui.repaint()
+                    eval('self.ui.tracktimeline' + str(iden) + '.clear_axes()')
 
         for track in self.player.tracks:
             if track.reproductor == iden:
-
                 track.set_reproductor(None)
                 track.set_instrument(None)
                 track.sounds = None
@@ -292,15 +291,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
     # plots track timelines
-    def plot_timelines(self):
-        #self.ui.tracktimeline1.plot_timebase(self.player.tracks[0].sounds, self.player.sample_rate)
+    def plot_timelines(self, reproductor, index):
 
-        #self.ui.tracktimeline1.repaint()
+        eval('self.ui.tracktimeline' + str(reproductor) + '.plot_timebase(self.player.tracks[' + str(index - 1) + '].sounds, self.player.sample_rate)')
         pass
-
-
-
-
 
     # Pots spectrogram
     def plot_spectrogram(self):

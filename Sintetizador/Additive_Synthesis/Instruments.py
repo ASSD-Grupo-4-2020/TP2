@@ -162,8 +162,19 @@ class Instrument:
         plt.plot(time, self.adsr)
         plt.show()
 
+    def suavizado(self, data):
 
-#instrumneto = Instrument('flute')
+        #copia = np.copy(data)
+
+        #for k in range(100):
+        #    copia = smooth(copia)
+
+        #plt.plot(np.arange(0, len(copia) / self.sample_rate, 1 / self.sample_rate), copia)
+        #plt.show()
+        pass
+
+
+#instrumneto = Instrument('violin')
 #instrumneto.fft_data()
 
 #print(instrumneto.instrument)
