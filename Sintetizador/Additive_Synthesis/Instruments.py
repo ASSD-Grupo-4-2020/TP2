@@ -61,7 +61,7 @@ class Instrument:
 
     def get_sound(self, frequency, duration):
         """
-        Genera el sonido en base a la fercuencia de la ntoa y la duracion deseada
+        Genera el sonido en base a la frecuencia de la nota y la duracion deseada
         :param frequency:
             frecuencia de la nota
         :param duration:
@@ -147,7 +147,6 @@ class Instrument:
 
         out = extend(fundamental, time, duration, self.sample_rate, self.instrument)
 
-
         return out
 
     def calculate_partial_shares(self):
@@ -164,11 +163,11 @@ class Instrument:
         plt.show()
 
 
-#instrumneto = Instrument('piano')
+#instrumneto = Instrument('flute')
 #instrumneto.fft_data()
 
 #print(instrumneto.instrument)
-#c4 = instrumneto.get_sound(261, 4)
+#c4 = instrumneto.get_sound(261, 3)
 #instrumneto.plot_adsr()
 
 #path = '/Users/agustin/Desktop/c4.wav'

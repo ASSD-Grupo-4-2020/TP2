@@ -37,7 +37,7 @@ class MplWidget(QWidget):
         self.canvas.axes = self.canvas.figure.add_subplot(111)
         self.canvas.axes.set_facecolor("#e1ddbf")
         self.setLayout(layout)
-
+        self.canvas.axes.set_position([0.2, 0.2, 0.6, 0.6])
     def plot_timebase(self, signal, sample_rate):
 
         self.canvas.axes.clear()

@@ -4,6 +4,11 @@ from PyQt5.QtWidgets import QFileDialog, QFrame, QMessageBox
 from Frontend.MainWindow import Ui_MainWindow
 from Frontend.MplWidget import MplWidget
 
+import numpy as np
+import pyaudio
+
+from effects.flanger import flange2, chorus
+
 from nptowav.numpy_to_wav import write_timeline_to_wav
 
 from Player.Working_Classes import Player
@@ -76,6 +81,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.Eliminar_track14.clicked.connect(lambda: self.remove_track(14))
         self.ui.Eliminar_track15.clicked.connect(lambda: self.remove_track(15))
         self.ui.Eliminar_track16.clicked.connect(lambda: self.remove_track(16))
+
+        self.ui.efecto_reproducir.clicked.connect(self.play_effects)
 
         self.ui.Reproducir_todo.clicked.connect(self.play_song)
 
@@ -155,8 +162,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def add_track(self):
         reproductor  = 0
         for ui in self.ui.scrollAreaWidgetContents.children():
-            reproductor += 1
             if isinstance(ui, QFrame) and not ui.isEnabled():
+                reproductor += 1
                 # Agrego track al primer reproductor desactivado que encuentro
                 ui.setEnabled(True)
 
@@ -174,7 +181,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 elif current_form == 'Sintesis fisica':
                     current_form = 'physical'
                 elif current_form == 'Sintesis basada en muestras':
-                    pass
+                    current_form = 'samplesynth'
 
                 self.player.tracks[ind - 1].set_reproductor(reproductor)
 
@@ -186,12 +193,24 @@ class MainWindow(QtWidgets.QMainWindow):
         self.plot_timelines()
 
     def remove_track(self, iden):
-        for ui in self.ui.scrollAreaWidgetContents.children():
-            ui.setEnabled(False)
+        print('hola')
 
-        self.player.tracks[iden - 1].set_reproductor = None
-        self.player.tracks[iden - 1].set_instrument = None
-        self.ui.scrollAreaWidgetContents.update()
+        for ui in self.ui.scrollAreaWidgetContents.children():
+            if isinstance(ui, QFrame):
+
+                ui.setEnabled(False)
+                ui.repaint()
+
+        for track in self.player.tracks:
+            if track.reproductor == iden:
+
+                track.set_reproductor(None)
+                track.set_instrument(None)
+                track.sounds = None
+
+                print('eliminado 1')
+                self.ui.track_selector.addItem('Track ' + str(track.iden))
+                self.ui.track_selector.repaint()
 
 
     # plays desired track
@@ -212,22 +231,65 @@ class MainWindow(QtWidgets.QMainWindow):
 
         pitch = notes[self.ui.single_note_selector.currentText()]
 
-        length = int(self.ui.duration_lineedit.text())
+        length = self.ui.duration_lineedit.text()
 
-        if length > 15:
-            self.show_pop_up('Porque querrías escuchar la misma nota por tanto tiempo?')
+        try:
 
-        current_form = self.ui.synth_selector_single_note.currentText()
-        if current_form == 'Sintesis aditiva':
-            current_form = 'additive'
-        elif current_form == 'Sintesis física':
-            current_form = 'physical'
-        elif current_form == 'Sintesis basada en muestras':
-            pass
+            if int(length) < 5:
 
-        instrument = self.ui.instrument_selector_single_note.currentText()
+                length = int(length)
+                current_form = self.ui.synth_selector_single_note.currentText()
+                if current_form == 'Sintesis aditiva':
+                    current_form = 'additive'
+                elif current_form == 'Sintesis física':
+                    current_form = 'physical'
+                elif current_form == 'Sintesis por muestras':
+                    current_form = 'samplesynth'
 
-        self.note_player.play_single_note(pitch, length, current_form, instrument)
+                instrument = self.ui.instrument_selector_single_note.currentText()
+                self.note_player.play_single_note(pitch, length, current_form, instrument)
+            else:
+                self.show_pop_up('Porque querrías escuchar la misma nota por tanto tiempo?')
+
+        except (ValueError, TypeError):
+            self.show_pop_up('Ingrese una duracion  válida para la nota')
+
+
+    def play_effects(self):
+        form = self.ui.select_effect.currentText()
+        speed = float(self.ui.speed_lineedit.text())
+        depth = float(self.ui.depth_lineedit.text())
+        if self.ui.inversion.isChecked():
+            inv = True
+        else:
+            inv = False
+
+        ids = []
+        for track in self.player.tracks:
+            if track.reproductor:
+                ids.append(track.iden)
+
+        output_song = self.player.make_song(ids)
+
+        if form == 'Flanger':
+            out = flange2(output_song, speed, depth, inv, self.player.sample_rate)
+        elif form == 'Chorus':
+            out = chorus(output_song, speed, depth, inv, self.player.sample_rate)
+
+        p = pyaudio.PyAudio()
+
+        stream = p.open(format=pyaudio.paFloat32,
+                        channels=1,
+                        rate=self.player.sample_rate,
+                        frames_per_buffer=1024,
+                        output=True,
+                        output_device_index=1
+                        )
+
+        stream.write(out.astype(np.float32).tostring())
+        stream.close()
+
+
 
     # plots track timelines
     def plot_timelines(self):
